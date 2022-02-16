@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Whole_RNG {
     public static void main(String[] args) {
-        System.out.println("Did you insert value by parameter ? 1 / 0 ");
+        System.out.println("Did you insert value by parameter ? 1 for 'YES' or 0 for 'NO' ");
         Scanner scanner = new Scanner(System.in);
         try {
             int answer = scanner.nextInt();
