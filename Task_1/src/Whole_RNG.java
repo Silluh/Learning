@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Whole_RNG {
     public static void main(String[] args) {
-        System.out.println("Zadal jste hodnoty pomocí parametru ? 1 / 0 ");
+        System.out.println("Did you insert value by parameter ? 1 / 0 ");
         Scanner scanner = new Scanner(System.in);
         try {
             int answer = scanner.nextInt();
@@ -25,16 +25,16 @@ public class Whole_RNG {
                                     }
                                 }
                             } catch (NumberFormatException nfe) {
-                                System.out.println("Zadaný parametr není číslo !");
+                                System.out.println("Entered value isn't number !");
                             }
 
                         }
                     } else {
-                        System.out.print("Musíte zadat parametr!");
+                        System.out.print("You have to insert parameter!");
                     }
                     break;
                 case 0:
-                    System.out.println("Zadejte počet požadovaných náhodných celých čísel");
+                    System.out.println("Enter number of required random values");
                     try {
                         int count_input = scanner.nextInt();
                         if(count_input > 0) {
@@ -46,16 +46,16 @@ public class Whole_RNG {
                         }
                     }
                     catch (InputMismatchException nfe){
-                      System.out.println("Musíte zadat pouze číselnou hodnotu !");
+                      System.out.println("You have to insert parameter!");
                     }
                     break;
                 default:
-                    System.out.println("Zadejte 1 pro 'ANO' a 0 pro 'NE', jiná hodnota je chybná !");
+                    System.out.println("Enter 1 for 'YES' and 0 for 'NO', other values are not acceptable!");
                     break;
             }
         }
         catch (InputMismatchException nfe){
-            System.out.println("Zadejte 1 pro 'ANO' a 0 pro 'NE', jiná hodnota je chybná !");
+            System.out.println("Enter 1 for 'YES' and 0 for 'NO', other values are not acceptable!");
         }
     }
 }
