@@ -1,3 +1,5 @@
+package main.com.radek.example1;
+
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
