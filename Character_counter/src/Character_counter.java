@@ -40,7 +40,7 @@ public class Character_counter {
                 System.out.println("Your value consist of: ");
             }
             if(counted_chars[row][0] != null && counted_chars[row][1] != null){
-                System.out.println(counted_chars[row][0] + " - " + counted_chars[row][1]);
+                System.out.println(counted_chars[row][0] + " = " + counted_chars[row][1]);
             }
         }
     }
