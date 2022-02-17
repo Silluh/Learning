@@ -1,10 +1,10 @@
-package main.com.radek.example1;
+package main.com.example1.radek;
 
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Whole_RNG {
+public class WholeNumberGeneratorByRadekApplication {
     public static void main(String[] args) {
         System.out.println("Did you insert value by parameter ? 1 / 0 ");
         Scanner scanner = new Scanner(System.in);

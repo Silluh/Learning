@@ -1,4 +1,4 @@
-package main.com.daniel.example1;
+package main.com.example1.daniel;
 
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
