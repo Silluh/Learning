@@ -1,5 +1,4 @@
 package main.com.example1.radek;
-
 import java.util.Random;
 
 public class RandomNumberApplication {
