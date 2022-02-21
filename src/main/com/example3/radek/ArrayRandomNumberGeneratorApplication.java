@@ -3,7 +3,7 @@ package main.com.example3.radek;
 import java.security.SecureRandom;
 import java.util.Arrays;
 
-public class ArrayRNGApplication {
+public class ArrayRandomNumberGeneratorApplication {
 
     public static void main(String[] args) {
 
