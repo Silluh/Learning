@@ -2,7 +2,7 @@ package main.com.example2.radek;
 import java.util.Scanner;
 import java.util.stream.IntStream;
 
-public class CharacterCounter {
+public class CharacterCounterApplication {
 
     public static void main(String[] args) {
         
