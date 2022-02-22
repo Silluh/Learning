@@ -1,4 +1,4 @@
-package main.com.example2.radek;
+package main.com.example002.radek;
 import java.util.Scanner;
 import java.util.stream.IntStream;
 
