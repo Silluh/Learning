@@ -23,6 +23,7 @@
 *.ipr
 **/out/
 **/generated/
+*.pb
 
 ### NetBeans ###
 /nbproject/private/
