@@ -1,7 +1,6 @@
 package main.com.example3.radek;
 
 import java.security.SecureRandom;
-import java.util.Arrays;
 
 public class ArrayRandomNumberGeneratorApplication {
 
@@ -10,10 +9,11 @@ public class ArrayRandomNumberGeneratorApplication {
         int[] array = new int[49];
         int[] array2 = new int[6];
         array = getFilledArray(false, array);
-        Arrays.stream(array).forEach(result -> System.out.print(result + " "));
-        System.out.println();
+        printArray(array);
         array2 = getFilledArray(true, array2);
-        Arrays.stream(array2).forEach(result -> System.out.print(result + " "));
+        printArray(array2);
+        //Nebo též
+        //printArray(getFilledArray(true, array2));
     }
 
     static int[] getFilledArray(boolean fillRandom, int[] array) {
@@ -28,5 +28,12 @@ public class ArrayRandomNumberGeneratorApplication {
 
         SecureRandom randomNumber = new SecureRandom();
         return randomNumber.nextInt(49);
+    }
+
+    static void printArray(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
     }
 }
