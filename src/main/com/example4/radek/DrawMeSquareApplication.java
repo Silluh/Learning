@@ -2,7 +2,6 @@ package main.com.example4.radek;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import java.util.stream.IntStream;
 
 public class DrawMeSquareApplication {
 
@@ -11,58 +10,22 @@ public class DrawMeSquareApplication {
 
         int size = getEnteredValue("How big square you wanna draw ? ");
         String symbol = getEnteredValue();
-        int variant = getEnteredValue("Test all 3 variants by typing 1,2 or 3");
-        drawMeSquare(size, symbol, variant);
+        drawMeSquare(size, symbol);
     }
 
-    static void drawMeSquare(int size, String symbol, int variant) {
+    static void drawMeSquare(int size, String symbol) {
 
-        switch (variant) {
-            case 1:
-                /*První varianta for cyklus a potom převod na IntStream a vykreslování pomocí forEach + lambda*/
-                for (int i = 0; i < size; i++) {
-                    final int finalI = i;
-                    IntStream.range(0, size).forEach(result -> {
-                        if (result == 0 || result == size - 1 || finalI == 0 || finalI == size - 1) {
-                            System.out.print(symbol);
-                        } else {
-                            System.out.print(" ");
-                        }
+            for (int row = 0; row < size; row++) {
+                for (int column = 0; column < size; column++) {
+                    System.out.print((isTrue(row, size)  || isTrue(column, size)) ? symbol : " ");
+                }
+                System.out.println();
+            }
+    }
 
-                    });
-                    System.out.println();
-                }
-                break;
-            case 2:
-                /*Druhá varianta převodu na IntStream a pomocí forEach + lambda vykreslit*/
-                IntStream.range(0, size).forEach(result -> {
-                    IntStream.range(0, size).forEach(result2 -> {
-                        if (result2 == 0 || result2 == size - 1 || result == 0 || result == size - 1) {
-                            System.out.print(symbol);
-                        } else {
-                            System.out.print(" ");
-                        }
-                    });
-                    System.out.println();
-                });
-                break;
-            case 3:
-                /*Třetí varianta 2x for cyklus*/
-                for (int i = 0; i < size; i++) {
-                    for (int j = 0; j < size; j++) {
-                        if ((i == 0 || i == size - 1) || (j == 0 || j == size - 1)) {
-                            System.out.print(symbol);
-                        } else {
-                            System.out.print(" ");
-                        }
-                    }
-                    System.out.println();
-                }
-                break;
-            default:
-                System.out.println("Only variants 1,2 and 3 are valid!");
-                break;
-        }
+    static boolean isTrue(int row, int size){
+
+        return  row == 0 || row == size - 1 ? true: false;
     }
 
     static int getEnteredValue(String question) {
