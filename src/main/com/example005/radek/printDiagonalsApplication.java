@@ -3,12 +3,6 @@ package main.com.example005.radek;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-enum DiagonalType {
-    LEFT,
-    RIGHT,
-    BOTH
-}
-
 public class printDiagonalsApplication {
 
     public static void main(String[] args) {
@@ -33,6 +27,7 @@ public class printDiagonalsApplication {
     }
 
     static void printDiagonals(DiagonalType type, int size) {
+
         for (int i = 0; i < size; i++) {
             for (int j = 0; j <= size; j++) {
                 switch (type) {
