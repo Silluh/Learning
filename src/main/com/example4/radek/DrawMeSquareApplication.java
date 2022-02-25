@@ -25,7 +25,7 @@ public class DrawMeSquareApplication {
 
     static boolean isTrue(int row, int size) {
 
-        return row == 0 || row == size - 1 ? true : false;
+        return row == 0 || row == size - 1;
     }
 
     static int getEnteredValue(String question) {
