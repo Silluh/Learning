@@ -1,4 +1,4 @@
-package main.com.example4.radek;
+package main.com.example004.radek;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -32,12 +32,11 @@ public class DrawMeSquareApplication {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println(question);
-        int value;
+        int value = 0;
         try {
             value = scanner.nextInt();
         } catch (InputMismatchException e) {
             System.out.println("Insert number only!");
-            value = 0;
             System.exit(0);
         }
         return value;
