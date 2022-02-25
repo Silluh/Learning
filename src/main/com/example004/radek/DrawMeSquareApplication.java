@@ -7,7 +7,6 @@ public class DrawMeSquareApplication {
 
     public static void main(String[] args) {
 
-
         int size = getEnteredValue("How big square you wanna draw ? ");
         String symbol = getEnteredValue();
         drawMeSquare(size, symbol);
