@@ -15,17 +15,17 @@ public class DrawMeSquareApplication {
 
     static void drawMeSquare(int size, String symbol) {
 
-            for (int row = 0; row < size; row++) {
-                for (int column = 0; column < size; column++) {
-                    System.out.print((isTrue(row, size)  || isTrue(column, size)) ? symbol : " ");
-                }
-                System.out.println();
+        for (int row = 0; row < size; row++) {
+            for (int column = 0; column < size; column++) {
+                System.out.print((isTrue(row, size) || isTrue(column, size)) ? symbol : " ");
             }
+            System.out.println();
+        }
     }
 
-    static boolean isTrue(int row, int size){
+    static boolean isTrue(int row, int size) {
 
-        return  row == 0 || row == size - 1 ? true: false;
+        return row == 0 || row == size - 1 ? true : false;
     }
 
     static int getEnteredValue(String question) {
