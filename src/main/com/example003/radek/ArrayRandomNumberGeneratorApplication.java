@@ -1,4 +1,4 @@
-package main.com.example3.radek;
+package main.com.example003.radek;
 
 import java.security.SecureRandom;
 
