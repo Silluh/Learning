@@ -16,13 +16,13 @@ public class DrawMeSquareApplication {
 
         for (int row = 0; row < size; row++) {
             for (int column = 0; column < size; column++) {
-                System.out.print((isTrue(row, size) || isTrue(column, size)) ? symbol : " ");
+                System.out.print((isPerimeter(row, size) || isPerimeter(column, size)) ? symbol : " ");
             }
             System.out.println();
         }
     }
 
-    static boolean isTrue(int row, int size) {
+    static boolean isPerimeter(int row, int size) {
 
         return row == 0 || row == size - 1;
     }
