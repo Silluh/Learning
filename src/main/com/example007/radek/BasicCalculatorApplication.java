@@ -1,6 +1,6 @@
 package main.com.example007.radek;
 
-public class basicCalculatorApplication {
+public class BasicCalculatorApplication {
 
     public static void main(String[] args) {
 
