@@ -16,15 +16,15 @@ public class DrawMeSquareApplication {
 
         for (int row = 0; row < size; row++) {
             for (int column = 0; column < size; column++) {
-                System.out.print((isPerimeter(row, size) || isPerimeter(column, size)) ? symbol : " ");
+                System.out.print((isPositionPerimeter(row, size) || isPositionPerimeter(column, size)) ? symbol : " ");
             }
             System.out.println();
         }
     }
 
-    static boolean isPerimeter(int row, int size) {
+    static boolean isPositionPerimeter(int position, int size) {
 
-        return row == 0 || row == size - 1;
+        return position == 0 || position == size - 1;
     }
 
     static int getEnteredValue(String question) {
