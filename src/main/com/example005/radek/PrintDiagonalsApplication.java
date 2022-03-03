@@ -2,15 +2,16 @@ package main.com.example005.radek;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import static main.com.example005.radek.DiagonalType.*;
 
-public class printDiagonalsApplication {
+public class PrintDiagonalsApplication {
 
     public static void main(String[] args) {
 
         int size = getEnteredValue();
-        printDiagonals(DiagonalType.LEFT, size);
-        printDiagonals(DiagonalType.RIGHT, size);
-        printDiagonals(DiagonalType.BOTH, size);
+        printDiagonals(LEFT, size);
+        printDiagonals(RIGHT, size);
+        printDiagonals(BOTH, size);
     }
 
     static int getEnteredValue() {
@@ -33,16 +34,9 @@ public class printDiagonalsApplication {
         for (int row = 0; row < size; row++) {
             for (int column = 0; column < size; column++) {
                 switch (type) {
-                    case LEFT:
-                        printLeft(column, row);
-                        break;
-                    case RIGHT:
-                        printRight(size, column, row);
-                        break;
-                    case BOTH:
-                        printBoth(size, column, row);
-                        break;
-
+                    case LEFT -> printLeft(column, row);
+                    case RIGHT -> printRight(size, column, row);
+                    case BOTH -> printBoth(size, column, row);
                 }
             }
             System.out.println();
