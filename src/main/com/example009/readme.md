@@ -3,7 +3,7 @@ Description
 V1
 --------------------------------------------------------------------------------------------
 - kazda verze tady V1 bude mit svuj package ... example009.radek.v1.
-- nasledujici verze bude vychazet z predchozi, je tedy zbytece ji delat dokud se nedokonci ta predchozi, plati pro vsechny prikladyv budoucnu
+- nasledujici verze bude vychazet z predchozi, je tedy zbytece ji delat dokud se nedokonci ta predchozi, plati pro vsechny priklady v budoucnu
 
 Nakopiruj si zde predchozi kalkulacky. 
 Kalkulacky budou obsahovat vnitrni atribut "result", do ktereho se bude ukladat prubezny vysledek. 

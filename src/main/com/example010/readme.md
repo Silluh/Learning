@@ -4,11 +4,11 @@ V1
 -----------------------
 Nauka rozhraní. 
 
-budeme mit interface BaseFighter s nasledujicimi metodami
+budeme mit interface BaseFighter s nasledujicimi metodami(vlastnostmi)
 shooting()
 defense()
 running()
-Kazda bude vracet int s danou hodnotou.
+Kazda bude vracet int hodnotu.
 
 Pak budeme mit tridu Soldier, ktery bude mit vlastnosti(shooting, defense, running) typu int a nastavene na 10.
 Tato trida bude implementovat rozhrani 
