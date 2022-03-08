@@ -13,7 +13,6 @@ Budeme pracovat jen s celymi cisly.
 
 V2 - example006.radek.v2.*
 --------------------------------------------------------------------------------------------
-Nastudovat praci s fily, streamy, kolekce, serializace.
 Finalni tridy zkopiruj do package v2.
 
 Vytvor vlastni vyjimku, ktera pri deleni nulou vypise: Damm - you can't divide by zero. Pro vypis pouzij System.err
