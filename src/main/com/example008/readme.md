@@ -11,7 +11,7 @@ Zda je cislo sude/liche pomoci modula.
 Mocnina. 
 Odmocnina. 
 Pracujeme vzdy z double. 
-Cilem je mit tri classy ... 1 kalkulacky a jednu Aplikaci, kde bude main metoda a v ni bude 
+Cilem je mit tri classy ... 2 kalkulacky a jednu Aplikaci, kde bude main metoda a v ni bude 
 
 print(extendedCalculatorV1.square(2)) // 4
 atd.

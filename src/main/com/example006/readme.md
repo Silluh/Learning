@@ -11,9 +11,8 @@ Pokud budes delit nulou, tak to osetris vyjimkou a vypises, ze nulou delit nejde
 
 Budeme pracovat jen s celymi cisly. 
 
-V2 - example006.radek.v2.*
+V2 - example006.radek.v2.* - TODO
 --------------------------------------------------------------------------------------------
-Nastudovat praci s fily, streamy, kolekce, serializace.
 Finalni tridy zkopiruj do package v2.
 
 Vytvor vlastni vyjimku, ktera pri deleni nulou vypise: Damm - you can't divide by zero. Pro vypis pouzij System.err
