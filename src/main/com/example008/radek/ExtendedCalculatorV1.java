@@ -2,10 +2,9 @@ package main.com.example008.radek;
 
 public class ExtendedCalculatorV1 extends Calculator {
 
-    public boolean isThisNumberOdd(double value) {
+    public boolean isOdd(double value) {
 
-        return value % 2 == 0 ? true : false;
-
+        return  value % 2 == 0 && value % 1 == 0;
     }
 
     public double square(double value) {
@@ -16,6 +15,5 @@ public class ExtendedCalculatorV1 extends Calculator {
     public double squareRoot(double value) {
 
         return Math.sqrt(value);
-
     }
 }
