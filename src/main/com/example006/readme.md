@@ -11,7 +11,7 @@ Pokud budes delit nulou, tak to osetris vyjimkou a vypises, ze nulou delit nejde
 
 Budeme pracovat jen s celymi cisly. 
 
-V2 - example006.radek.v2.*
+V2 - example006.radek.v2.* - TODO
 --------------------------------------------------------------------------------------------
 Finalni tridy zkopiruj do package v2.
 
