@@ -6,9 +6,13 @@ public class ExtendedCalculatorV1 extends Calculator {
         super(defaultResult);
     }
 
-    public boolean isThisNumberOdd() {
+    public boolean isOdd() {
 
-        return super.result % 2 == 0 ? true : false;
+        if (super.result % 1 != 0) {
+            System.out.println("Only whole number can be odd or even");
+            return false;
+        }
+        return super.result % 2 == 0;
     }
 
     public void square() {

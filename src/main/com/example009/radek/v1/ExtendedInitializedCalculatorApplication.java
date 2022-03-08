@@ -4,7 +4,7 @@ public class ExtendedInitializedCalculatorApplication {
 
     public static void main(String[] args) {
 
-        ExtendedCalculatorV1 extendedCalculator = new ExtendedCalculatorV1(25);
+        ExtendedCalculatorV1 extendedCalculator = new ExtendedCalculatorV1(25.2);
         extendedCalculator.plus(0);
         extendedCalculator.square();
         extendedCalculator.squareRoot();
