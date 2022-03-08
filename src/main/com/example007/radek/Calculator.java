@@ -12,7 +12,7 @@ public class Calculator {
         return value - value2;
     }
 
-    double multi(double value, double value2) {
+    double multiply(double value, double value2) {
 
         return value * value2;
     }
