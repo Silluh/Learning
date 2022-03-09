@@ -44,10 +44,10 @@ V4 - example009.radek.v4.*
 - upgraduj metodu storeResultsIntoFile ... kdy cestu pro ulozeni souboru budes vybirat pomoci dialogu, kde si cestu vyberes
 - to same udelas pro nacitani filu
 
-V5 - serializace / deserializace
+V5 - example009.radek.v5.*
 --------------------------------------------------------------------------------------------
 - v packagi v5 bude jen classa s main aplikaci, která bude volat vsechny operace kalkulacky z package v1
 
-V6 - serializace / deserializace
+V6 - serializace / deserializace - TODO
 --------------------------------------------------------------------------------------------
 
