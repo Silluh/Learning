@@ -46,3 +46,8 @@ V4 - example009.radek.v4.*
 
 V5 - serializace / deserializace
 --------------------------------------------------------------------------------------------
+- v packagi v5 bude jen classa s main aplikaci, která bude volat vsechny operace kalkulacky z package v1
+
+V6 - serializace / deserializace
+--------------------------------------------------------------------------------------------
+
