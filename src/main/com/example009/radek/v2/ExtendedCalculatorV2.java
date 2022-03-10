@@ -9,20 +9,20 @@ public class ExtendedCalculatorV2 extends Calculator {
 
     public boolean isOdd() {
 
-        if (super.result % 1 != 0) {
+        if (getResult() % 1 != 0) {
             System.out.println("Only whole number can be odd or even");
             return false;
         }
-        return super.result % 2 == 0;
+        return getResult() % 2 == 0;
     }
 
     public void square() {
 
-        super.result = result * result;
+        setResult(getResult() * getResult());
     }
 
     public void squareRoot() {
 
-        super.result = Math.sqrt(super.result);
+        setResult(Math.sqrt(getResult()));
     }
 }

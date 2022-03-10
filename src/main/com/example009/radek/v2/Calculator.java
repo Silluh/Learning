@@ -1,9 +1,12 @@
 package main.com.example009.radek.v2;
 
+import java.util.ArrayList;
+import java.util.List;
+
 class Calculator {
 
-    double result;
-    protected double storedResult;
+    private double result;
+    private List<Double> list = new ArrayList<>();
 
     Calculator(double defaultResult) {
 
@@ -39,13 +42,18 @@ class Calculator {
         return this.result;
     }
 
-    double getStoredResult() {
+    void setResult(double input) {
 
-        return this.storedResult;
+        this.result = input;
     }
 
-    void storeResult() {
+    List<Double> getStoredResults() {
 
-        this.storedResult = this.result;
+        return list;
+    }
+
+    void storeResults() {
+
+        list.add(this.result);
     }
 }
