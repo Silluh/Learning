@@ -52,7 +52,7 @@ class Calculator {
         return list;
     }
 
-    void storeResults() {
+    void setStoreResult() {
 
         list.add(this.result);
     }

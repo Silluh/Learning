@@ -6,14 +6,14 @@ public class ExtendedInitializedCalculatorV2Application {
 
         ExtendedCalculatorV2 extendedCalculator = new ExtendedCalculatorV2(25);
         extendedCalculator.plus(5);
-        extendedCalculator.storeResults();
+        extendedCalculator.setStoreResult();
         extendedCalculator.minus(10);
         extendedCalculator.square();
-        extendedCalculator.storeResults();
+        extendedCalculator.setStoreResult();
         extendedCalculator.multiply(10);
-        extendedCalculator.storeResults();
+        extendedCalculator.setStoreResult();
         extendedCalculator.squareRoot();
-        extendedCalculator.storeResults();
+        extendedCalculator.setStoreResult();
         System.out.println(extendedCalculator.getStoredResults());
         System.out.println(extendedCalculator.getResult());
     }
