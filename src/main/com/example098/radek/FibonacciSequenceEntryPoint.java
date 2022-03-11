@@ -10,11 +10,13 @@ public class FibonacciSequenceEntryPoint {
     static int getNumberOfFibonacciEntryPoint(int entryPoint) {
 
         int previousNumber = 0;
-        int currentNumber = 1;
+        int currentNumber = 0;
         for (int i = 0; i < entryPoint; i++) {
-            if (i > 1) {
+            if (i >= 1) {
                 currentNumber = currentNumber + previousNumber;
-                previousNumber = currentNumber;
+                previousNumber = currentNumber - previousNumber;
+            }else{
+                currentNumber = 1;
             }
         }
         return currentNumber;
