@@ -15,7 +15,7 @@ public class FibonacciSequenceEntryPoint {
             if (i >= 1) {
                 currentNumber = currentNumber + previousNumber;
                 previousNumber = currentNumber - previousNumber;
-            }else{
+            } else {
                 currentNumber = 1;
             }
         }
