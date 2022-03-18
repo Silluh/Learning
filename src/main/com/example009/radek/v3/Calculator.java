@@ -49,10 +49,19 @@ class Calculator {
 
     List<Double> getStoredResults() {
 
+        FileService fileService = new FileService();
+        fileService.loadResultsFromFile();
         return list;
     }
 
+    void setStoredResults(){
+
+        FileService fileservice = new FileService();
+        fileservice.storeResultsIntoFile(list);
+    }
+
     void setStoreResult() {
+
 
         list.add(this.result);
     }
