@@ -15,8 +15,6 @@ public class ExtendedInitializedCalculatorV3Application {
         extendedCalculator.squareRoot();
         extendedCalculator.setStoreResult();
         extendedCalculator.setStoredResults();
-        System.out.println(extendedCalculator.getStoredResults());
-
-        System.out.println(extendedCalculator.getResult());
+        extendedCalculator.getStoredResults();
     }
 }

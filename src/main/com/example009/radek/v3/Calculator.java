@@ -47,21 +47,19 @@ class Calculator {
         this.result = input;
     }
 
-    List<Double> getStoredResults() {
+    void getStoredResults() {
 
         FileService fileService = new FileService();
         fileService.loadResultsFromFile();
-        return list;
     }
 
-    void setStoredResults(){
+    void setStoredResults() {
 
         FileService fileservice = new FileService();
         fileservice.storeResultsIntoFile(list);
     }
 
     void setStoreResult() {
-
 
         list.add(this.result);
     }

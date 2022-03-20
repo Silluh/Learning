@@ -6,19 +6,19 @@ import java.util.Scanner;
 
 public class FileService {
 
-    boolean storeResultsIntoFile(List<Double> inputList) {
+    final private String path = "src/main/com/example009/radek/v3/calculator-results/";
 
-        boolean isStored = false;
+    void storeResultsIntoFile(List<Double> inputList) {
+
         String name = getUserInput("Please insert file name: ", false);
         saveResultsIntoFile(name, inputList);
-        return isStored;
     }
 
-    boolean loadResultsFromFile() {
+    void loadResultsFromFile() {
 
         try {
             String name = getUserInput("Please insert file name: ", true);
-            BufferedReader reader = new BufferedReader(new FileReader(name + ".txt"));
+            BufferedReader reader = new BufferedReader(new FileReader(path + name + ".txt"));
             reader.lines().forEach(System.out::println);
             reader.close();
         } catch (FileNotFoundException e) {
@@ -28,7 +28,6 @@ public class FileService {
             System.out.println("Reading from file wasn't successful");
             e.printStackTrace();
         }
-        return true;
     }
 
     String getUserInput(String message, boolean checkExistence) {
@@ -37,12 +36,12 @@ public class FileService {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         boolean exists = doesFileExists(input);
-        while ((exists == false || input == "exit") && checkExistence == true) {
+        while ((!exists || input.equals("exit")) && checkExistence) {
             System.out.println("File name isn't correct try again, or type 'exit' to stop the program");
             input = getUserInput();
             exists = doesFileExists(input);
         }
-        if (input.trim().length() == 0 && checkExistence == false) {
+        if (input.isEmpty() && !checkExistence) {
             System.out.println("Type valid file name, or type 'exit' to stop the program");
             input = getUserInput();
         }
@@ -52,26 +51,28 @@ public class FileService {
     String getUserInput() {
 
         Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
-        if (input.trim().length() == 0) {
-            getUserInput();
-        } else if (input.equals("exit")) {
-            System.exit(0);
-        }
+        String input;
+        do {
+            input = scanner.nextLine();
+            if (input.equals("exit")) {
+                System.exit(0);
+            }
+        } while (input.isEmpty());
+
         return input;
     }
 
     boolean doesFileExists(String name) {
 
-        File file = new File(name + ".txt");
+        File file = new File(path + name + ".txt");
         return file.exists();
     }
 
     void saveResultsIntoFile(String name, List<Double> inputText) {
 
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(name + ".txt"));
-            for (int i = 0; i < inputText.stream().count(); i++) {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(path + name + ".txt"));
+            for (int i = 0; i < (long) inputText.size(); i++) {
                 writer.write(String.valueOf(inputText.get(i)));
                 writer.newLine();
 
@@ -80,6 +81,5 @@ public class FileService {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 }
