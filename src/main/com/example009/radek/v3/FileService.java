@@ -18,7 +18,8 @@ public class FileService {
 
         try {
             String name = getUserInput("Please insert file name: ", true);
-            BufferedReader reader = new BufferedReader(new FileReader(path + name + ".txt"));
+
+            BufferedReader reader = new BufferedReader(new FileReader(path + name));
             reader.lines().forEach(System.out::println);
             reader.close();
         } catch (FileNotFoundException e) {
@@ -64,14 +65,15 @@ public class FileService {
 
     boolean doesFileExists(String name) {
 
-        File file = new File(path + name + ".txt");
+        File file = new File(path + name);
         return file.exists();
     }
 
     void saveResultsIntoFile(String name, List<Double> inputText) {
 
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(path + name + ".txt"));
+            createDirectory();
+            BufferedWriter writer = new BufferedWriter(new FileWriter(path + name));
             for (int i = 0; i < (long) inputText.size(); i++) {
                 writer.write(String.valueOf(inputText.get(i)));
                 writer.newLine();
@@ -81,5 +83,11 @@ public class FileService {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    void createDirectory() {
+
+        File file = new File(path);
+        file.mkdirs();
     }
 }
