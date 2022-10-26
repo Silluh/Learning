@@ -1,8 +1,10 @@
 package main.com.example009.radek.v3;
 
+import java.io.IOException;
+
 public class ExtendedInitializedCalculatorV3Application {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         ExtendedCalculatorV3 extendedCalculator = new ExtendedCalculatorV3(25);
         extendedCalculator.plus(5);
@@ -14,7 +16,7 @@ public class ExtendedInitializedCalculatorV3Application {
         extendedCalculator.setStoreResult();
         extendedCalculator.squareRoot();
         extendedCalculator.setStoreResult();
-        extendedCalculator.setStoredResults();
+        extendedCalculator.storeResults();
         extendedCalculator.getStoredResults();
     }
 }

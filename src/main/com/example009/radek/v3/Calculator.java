@@ -1,11 +1,13 @@
 package main.com.example009.radek.v3;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 class Calculator {
 
     private double result;
+    private final FileService fileService = new FileService();
     private List<Double> list = new ArrayList<>();
 
     Calculator(double defaultResult) {
@@ -47,16 +49,14 @@ class Calculator {
         this.result = input;
     }
 
-    void getStoredResults() {
+    void getStoredResults() throws IOException {
 
-        FileService fileService = new FileService();
         fileService.loadResultsFromFile();
     }
 
-    void setStoredResults() {
+    void storeResults() {
 
-        FileService fileservice = new FileService();
-        fileservice.storeResultsIntoFile(list);
+        fileService.storeResultsIntoFile(list);
     }
 
     void setStoreResult() {
