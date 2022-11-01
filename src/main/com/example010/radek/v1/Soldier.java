@@ -1,7 +1,6 @@
 package main.com.example010.radek.v1;
 
-public class Soldier implements IBaseFighter {
-
+public class Soldier implements BaseFighter {
 
     @Override
     public int shooting() {

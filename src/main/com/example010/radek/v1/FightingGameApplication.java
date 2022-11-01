@@ -7,5 +7,4 @@ public class FightingGameApplication {
         Soldier soldier = new Soldier();
         System.out.println(soldier.defense());
     }
-
 }
