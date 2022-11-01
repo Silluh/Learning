@@ -2,12 +2,15 @@ package main.com.example011.radek.v1;
 
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+import java.util.Scanner;
 
 public class Mines {
 
     protected int playgroundSize;
 
     protected int numMines;
+
+    protected String[][] playground;
 
     public Mines(int size, int mines) {
 
@@ -26,9 +29,9 @@ public class Mines {
         }
     }
 
-    public String[][] fillPlaygroundWithMines() throws NoSuchAlgorithmException {
+    public void fillPlaygroundWithMines() throws NoSuchAlgorithmException {
 
-        String[][] playground = new String[playgroundSize][playgroundSize];
+        playground = new String[playgroundSize][playgroundSize];
         SecureRandom random = SecureRandom.getInstanceStrong();
         int placedMines = 0;
         while (placedMines != getNumMines() || placedMines == 0) {
@@ -39,13 +42,11 @@ public class Mines {
                 placedMines = placedMines + 1;
             }
         }
-        return playground;
     }
 
     public void printPlayground() throws NoSuchAlgorithmException {
 
         System.out.println("Generating playground...");
-        String[][] playground = fillPlaygroundWithMines();
         String printMessage = "";
         for (int i = 0; i < playgroundSize; i++) {
             if (i > 0) {
@@ -100,5 +101,66 @@ public class Mines {
     private int getNumMines() {
 
         return numMines;
+    }
+
+    private int getUserInput() {
+
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextInt();
+    }
+
+    private int getValidRowNumber() {
+
+        boolean validRow = false;
+        System.out.println("Please choose row number: ");
+        int rowInput = getUserInput();
+        while (!validRow) {
+            if (rowInput > getPlaygroundSize() || rowInput < 0) {
+                System.out.println("Invalid row number, please type another one");
+                rowInput = getUserInput();
+                validRow = false;
+            } else {
+                validRow = true;
+            }
+        }
+        return rowInput;
+    }
+
+    private int getValidColumnNumber() {
+
+        boolean validColumn = false;
+        System.out.println("Please choose column number: ");
+        int columnInput = getUserInput();
+        while (!validColumn) {
+            if (columnInput > getPlaygroundSize() || columnInput < 0) {
+                System.out.println("Invalid column number, please type another one");
+                columnInput = getUserInput();
+                validColumn = false;
+            } else {
+                validColumn = true;
+            }
+        }
+        return columnInput;
+    }
+
+    public void playerMove() throws NoSuchAlgorithmException {
+
+        int emptySpaceHit = 0;
+        while (emptySpaceHit < (playgroundSize * playgroundSize) - numMines) {
+            int rowNumber = getValidRowNumber();
+            int columnNumber = getValidColumnNumber();
+            if (playground[rowNumber][columnNumber] == "x") {
+                System.out.println("You hit mine !");
+                System.exit(0);
+            } else {
+                System.out.println("You hit empty slot");
+                playground[rowNumber][columnNumber] = "o";
+                emptySpaceHit = emptySpaceHit + 1;
+            }
+            printPlayground();
+        }
+        System.out.println("Congratulations ! You WON ! \n" +
+                "( ͡° ͜ ͡°)"
+        );
     }
 }
