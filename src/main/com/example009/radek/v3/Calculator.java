@@ -7,8 +7,10 @@ import java.util.List;
 class Calculator {
 
     private double result;
-    private final FileService fileService = new FileService();
+
     private List<Double> list = new ArrayList<>();
+
+    private final FileService fileService = new FileService();
 
     Calculator(double defaultResult) {
 
@@ -44,17 +46,18 @@ class Calculator {
         return this.result;
     }
 
+
     void setResult(double input) {
 
         this.result = input;
     }
 
-    void getStoredResults() throws IOException {
+    void loadResultsFromFile() throws IOException {
 
         fileService.loadResultsFromFile();
     }
 
-    void storeResults() {
+    void storeResultsIntoFile() {
 
         fileService.storeResultsIntoFile(list);
     }

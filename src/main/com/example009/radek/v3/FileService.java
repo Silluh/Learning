@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class FileService {
 
-    private final String PATH_FILE_RESULTS = "src/main/com/example009/radek/v3/calculator-results/";
+    private final String PATH_FILE_RESULTS = "src/main/resources/example009/v3/";
 
     void storeResultsIntoFile(List<Double> inputList) {
 
@@ -16,11 +16,9 @@ public class FileService {
 
     void loadResultsFromFile() throws IOException {
 
-        try {
-            String name = getCheckedUserInput("Please insert file name where you want to load results from: ");
-            BufferedReader reader = new BufferedReader(new FileReader(PATH_FILE_RESULTS + name));
+        String name = getCheckedUserInput();
+        try (BufferedReader reader = new BufferedReader(new FileReader(PATH_FILE_RESULTS + name))) {
             reader.lines().forEach(System.out::println);
-            reader.close();
         } catch (FileNotFoundException e) {
             throw new FileNotFoundException("Connecting to file reader wasn't successful");
         } catch (IOException e) {
@@ -40,9 +38,9 @@ public class FileService {
         return input;
     }
 
-    String getCheckedUserInput(String message) {
+    String getCheckedUserInput() {
 
-        System.out.println(message);
+        System.out.println("Please insert file name where you want to load results from: ");
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         boolean exists = fileExists(input);
@@ -97,6 +95,10 @@ public class FileService {
     void createDirectory() {
 
         File file = new File(PATH_FILE_RESULTS);
-        file.mkdirs();
+        if (file.mkdirs()) {
+            System.out.println("Directory was created successfully");
+        } else {
+            System.out.println("Directory wasn't created");
+        }
     }
 }
