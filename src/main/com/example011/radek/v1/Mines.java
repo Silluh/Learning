@@ -44,7 +44,7 @@ public class Mines {
         }
     }
 
-    public void printPlayground() throws NoSuchAlgorithmException {
+    public void printPlayground(boolean showMines) throws NoSuchAlgorithmException {
 
         System.out.println("Generating playground...");
         String printMessage = "";
@@ -53,9 +53,14 @@ public class Mines {
                 printMessage = printMessage + "\n";
             }
             for (int l = 0; l < playgroundSize; l++) {
-                if (playground[i][l] == null) {
-                    printMessage = printMessage + " " + "\t";
-                } else {
+                if (playground[i][l] == null || playground[i][l] == "x") {
+                    if(showMines &&  playground[i][l] == "x"){
+                        printMessage = printMessage + playground[i][l] + "\t";
+                    }else{
+                        printMessage = printMessage + " " + "\t";
+                    }
+                }
+                    else {
                     printMessage = printMessage + playground[i][l] + "\t";
                 }
             }
@@ -150,14 +155,16 @@ public class Mines {
             int rowNumber = getValidRowNumber();
             int columnNumber = getValidColumnNumber();
             if (playground[rowNumber][columnNumber] == "x") {
-                System.out.println("You hit mine !");
+                System.out.println("You hit mine ! You LOSE ! \n" +
+                        "( ͡° ︵ ͡°)");
+                printPlayground(true);
                 System.exit(0);
             } else {
                 System.out.println("You hit empty slot");
                 playground[rowNumber][columnNumber] = "o";
                 emptySpaceHit = emptySpaceHit + 1;
             }
-            printPlayground();
+            printPlayground(false);
         }
         System.out.println("Congratulations ! You WON ! \n" +
                 "( ͡° ͜ ͡°)"

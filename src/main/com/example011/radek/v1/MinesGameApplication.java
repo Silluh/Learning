@@ -8,7 +8,7 @@ public class MinesGameApplication {
         Mines mines = new Mines(5, 20);
         mines.getSizeAndMines();
         mines.fillPlaygroundWithMines();
-        mines.printPlayground();
+        mines.printPlayground(false);
         mines.playerMove();
     }
 }
