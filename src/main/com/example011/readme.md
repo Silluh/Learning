@@ -6,6 +6,7 @@ Napiseme neco jako hru miny.
 
 Vytvoris classu Mines. Pokud jsi se nesetkal s pojmem konstruktor, tak nacvicit. 
 Pres kostruktor vytvoris velikost pole, ktere bude ctvercoveho tvaru a pocet min, ktere budes hledat. 
+Vse budes zadavat v cmd, tak at jsou ruzne osetrene chybove stavy jako driv.
 Na jednu minu musi byt minimalne 10 policek a minimalni delka hrany bude 5, takze to radne pri vytvareni overis.
 Taky musis overit aby pocet min nebyl vic jak pocet poli a byla moznost mit aspon jedno pole pro oznaceni.
 Zatim to bude jen konzolovka. 
