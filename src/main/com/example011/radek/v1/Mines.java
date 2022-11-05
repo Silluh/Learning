@@ -15,14 +15,7 @@ public class Mines {
     public Mines(int size, int mines) {
 
         if (setPlaygroundSize(size)) {
-            int setNumMinesResult = setNumMines(mines);
-            if (setNumMinesResult == 1) {
-                System.out.println("You can't have more mines, then you have playground size !");
-                System.exit(0);
-            } else if (setNumMinesResult == 2) {
-                System.out.println("To place mine, you need playground of minimum size of 10 boxes!");
-                System.exit(0);
-            }
+            setNumMines(mines);
         } else {
             System.out.println("Bad size of playground, size must be bigger then 5!");
             System.exit(0);
@@ -44,28 +37,31 @@ public class Mines {
         }
     }
 
-    public void printPlayground(boolean showMines) throws NoSuchAlgorithmException {
+    public void printPlayground(boolean showMines) {
 
         System.out.println("Generating playground...");
-        String printMessage = "";
+        int sizeBuilder = (playgroundSize * playgroundSize * 3);
+        StringBuilder printMessageBuilder = new StringBuilder(sizeBuilder);
         for (int i = 0; i < playgroundSize; i++) {
             if (i > 0) {
-                printMessage = printMessage + "\n";
+                printMessageBuilder.append("\n");
             }
             for (int l = 0; l < playgroundSize; l++) {
-                if (playground[i][l] == null || playground[i][l] == "x") {
-                    if(showMines &&  playground[i][l] == "x"){
-                        printMessage = printMessage + playground[i][l] + "\t";
-                    }else{
-                        printMessage = printMessage + " " + "\t";
+                if (playground[i][l] == null || playground[i][l].equals("x")) {
+                    if (showMines && playground[i][l] != null && playground[i][l].equals("x")) {
+                        printMessageBuilder.append(playground[i][l]);
+                        printMessageBuilder.append("\t");
+                    } else {
+                        printMessageBuilder.append(" ");
+                        printMessageBuilder.append("\t");
                     }
-                }
-                    else {
-                    printMessage = printMessage + playground[i][l] + "\t";
+                } else {
+                    printMessageBuilder.append(playground[i][l]);
+                    printMessageBuilder.append("\t");
                 }
             }
-            if (i == playgroundSize - 1 && i == playgroundSize - 1) {
-                System.out.println(printMessage);
+            if (i == playgroundSize - 1) {
+                System.out.println(printMessageBuilder);
             }
         }
     }
@@ -89,18 +85,18 @@ public class Mines {
         return playgroundSize;
     }
 
-    private int setNumMines(int mines) {
+    private void setNumMines(int mines) {
 
         int size = getPlaygroundSize();
-        int returnValue = 0;
         if (mines >= (size * size)) {
-            returnValue = 1;
+            System.out.println("You can't have more mines, then you have playground size !");
+            System.exit(0);
         } else if ((size * size) < 10) {
-            returnValue = 2;
+            System.out.println("To place mine, you need playground of minimum size of 10 boxes!");
+            System.exit(0);
         } else {
             numMines = mines;
         }
-        return returnValue;
     }
 
     private int getNumMines() {
@@ -114,50 +110,27 @@ public class Mines {
         return scanner.nextInt();
     }
 
-    private int getValidRowNumber() {
+    private int getValidNumber() {
 
-        boolean validRow = false;
         System.out.println("Please choose row number: ");
-        int rowInput = getUserInput();
-        while (!validRow) {
-            if (rowInput > getPlaygroundSize() || rowInput < 0) {
-                System.out.println("Invalid row number, please type another one");
-                rowInput = getUserInput();
-                validRow = false;
-            } else {
-                validRow = true;
-            }
+        int numberInput = getUserInput();
+        while (numberInput + 1 > getPlaygroundSize() || numberInput < 0) {
+            System.out.println("Invalid row number, please type another one");
+            numberInput = getUserInput();
         }
-        return rowInput;
+        return numberInput;
     }
 
-    private int getValidColumnNumber() {
-
-        boolean validColumn = false;
-        System.out.println("Please choose column number: ");
-        int columnInput = getUserInput();
-        while (!validColumn) {
-            if (columnInput > getPlaygroundSize() || columnInput < 0) {
-                System.out.println("Invalid column number, please type another one");
-                columnInput = getUserInput();
-                validColumn = false;
-            } else {
-                validColumn = true;
-            }
-        }
-        return columnInput;
-    }
-
-    public void playerMove() throws NoSuchAlgorithmException {
+    public void playerMove() {
 
         int emptySpaceHit = 0;
         while (emptySpaceHit < (playgroundSize * playgroundSize) - numMines) {
-            int rowNumber = getValidRowNumber();
-            int columnNumber = getValidColumnNumber();
-            if (playground[rowNumber][columnNumber] == "x") {
+            int rowNumber = getValidNumber();
+            int columnNumber = getValidNumber();
+            if (playground[rowNumber][columnNumber].equals("x")) {
+                printPlayground(true);
                 System.out.println("You hit mine ! You LOSE ! \n" +
                         "( ͡° ︵ ͡°)");
-                printPlayground(true);
                 System.exit(0);
             } else {
                 System.out.println("You hit empty slot");
