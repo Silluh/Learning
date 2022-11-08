@@ -8,7 +8,7 @@ class Calculator {
 
     private double result;
 
-    private List<Double> list = new ArrayList<>();
+    private final List<Double> list = new ArrayList<>();
 
     private final FileService fileService = new FileService();
 
@@ -52,9 +52,9 @@ class Calculator {
         this.result = input;
     }
 
-    void loadResultsFromFile() throws IOException {
+    void loadResultsFromFile(String name) throws IOException {
 
-        fileService.loadResultsFromFile();
+        fileService.loadResultsFromFile(name);
     }
 
     void storeResultsIntoFile() {
@@ -62,7 +62,7 @@ class Calculator {
         fileService.storeResultsIntoFile(list);
     }
 
-    void setStoreResult() {
+    void StoreResult() {
 
         list.add(this.result);
     }

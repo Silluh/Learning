@@ -14,9 +14,8 @@ public class FileService {
         saveResultsIntoFile(name, inputList);
     }
 
-    void loadResultsFromFile() throws IOException {
+    void loadResultsFromFile(String name) throws IOException {
 
-        String name = getCheckedUserInput();
         try (BufferedReader reader = new BufferedReader(new FileReader(PATH_FILE_RESULTS + name))) {
             reader.lines().forEach(System.out::println);
         } catch (FileNotFoundException e) {
@@ -32,8 +31,19 @@ public class FileService {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         if (input.isEmpty() || input.equals("exit")) {
-            System.out.println("Type valid file name, or type 'exit' to stop the program");
+            System.out.println("Type valid response, or type 'exit' to stop the program");
             input = getUserInput();
+        }
+        return input;
+    }
+
+    int getUserIntInput() {
+
+        System.out.println("Please insert file number or type '0' to end program");
+        Scanner scanner = new Scanner(System.in);
+        int input = scanner.nextInt();
+        if (input == 0) {
+            System.exit(0);
         }
         return input;
     }
@@ -70,6 +80,26 @@ public class FileService {
         return input;
     }
 
+    void loadPreviousResultFile() throws IOException {
+
+        File file = new File(PATH_FILE_RESULTS);
+        String[] files = file.list();
+        if (files != null && files.length > 0) {
+            if (getUserInput("Do you want to load previous results ? yes/no").equals("yes")) {
+                StringBuilder previousFilesBuilder = new StringBuilder(files.length);
+                for (int i = 0; i < files.length; i++) {
+                    previousFilesBuilder.append(i + 1).append(" - ").append(files[i]).append("\n");
+                }
+                System.out.println(previousFilesBuilder);
+                int fileNumber = getUserIntInput();
+                if (fileNumber - 1 <= files.length) {
+                    loadResultsFromFile(files[fileNumber - 1]);
+                    System.exit(0);
+                }
+            }
+        }
+    }
+
     boolean fileExists(String name) {
 
         File file = new File(PATH_FILE_RESULTS + name);
@@ -84,7 +114,6 @@ public class FileService {
             for (int i = 0; i < (long) inputText.size(); i++) {
                 writer.write(String.valueOf(inputText.get(i)));
                 writer.newLine();
-
             }
             writer.close();
         } catch (IOException e) {
