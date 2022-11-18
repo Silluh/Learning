@@ -82,22 +82,35 @@ public class FileService {
 
     void loadPreviousResultFile() throws IOException {
 
-        File file = new File(PATH_FILE_RESULTS);
-        String[] files = file.list();
-        if (files != null && files.length > 0) {
-            if (getUserInput("Do you want to load previous results ? yes/no").equals("yes")) {
-                StringBuilder previousFilesBuilder = new StringBuilder(files.length);
-                for (int i = 0; i < files.length; i++) {
-                    previousFilesBuilder.append(i + 1).append(" - ").append(files[i]).append("\n");
-                }
-                System.out.println(previousFilesBuilder);
-                int fileNumber = getUserIntInput();
-                if (fileNumber - 1 <= files.length) {
-                    loadResultsFromFile(files[fileNumber - 1]);
-                    System.exit(0);
-                }
+        File directory = new File(PATH_FILE_RESULTS);
+        String[] files = directory.list();
+        if (anyFileExist(directory) && shouldLoadResultsFromFile()) {
+            StringBuilder previousFiles = new StringBuilder(files.length);
+            for (int i = 0; i < files.length; i++) {
+                previousFiles.append(i + 1)
+                        .append(" - ")
+                        .append(files[i])
+                        .append("\n");
+            }
+            System.out.println(previousFiles);
+            int fileNumber = getUserIntInput();
+            if (fileNumber - 1 <= files.length) {
+                loadResultsFromFile(files[fileNumber - 1]);
+                System.exit(0);
             }
         }
+    }
+
+    boolean anyFileExist(File directory) {
+
+        String[] files = directory.list();
+        return files != null && files.length > 0;
+    }
+
+    boolean shouldLoadResultsFromFile() {
+
+        String input = getUserInput("Do you want to load previous results ? yes/no");
+        return input.equals("yes");
     }
 
     boolean fileExists(String name) {
@@ -108,14 +121,12 @@ public class FileService {
 
     void saveResultsIntoFile(String name, List<Double> inputText) {
 
-        try {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(PATH_FILE_RESULTS + name))) {
             createDirectory();
-            BufferedWriter writer = new BufferedWriter(new FileWriter(PATH_FILE_RESULTS + name));
             for (int i = 0; i < (long) inputText.size(); i++) {
                 writer.write(String.valueOf(inputText.get(i)));
                 writer.newLine();
             }
-            writer.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

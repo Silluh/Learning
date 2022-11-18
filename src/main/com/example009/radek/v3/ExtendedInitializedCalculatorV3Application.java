@@ -6,6 +6,7 @@ public class ExtendedInitializedCalculatorV3Application {
 
     public static void main(String[] args) throws IOException {
 
+
         ExtendedCalculatorV3 extendedCalculator = new ExtendedCalculatorV3(25);
         FileService fileService = new FileService();
         fileService.loadPreviousResultFile();
