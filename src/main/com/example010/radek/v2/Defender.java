@@ -1,6 +1,11 @@
 package main.com.example010.radek.v2;
 
-public class Defender extends Soldier implements BaseFighter {
+public class Defender extends Soldier {
+
+    public Defender(String name, int life) {
+
+        super(name, life);
+    }
 
     @Override
     public int attack() {
@@ -18,10 +23,5 @@ public class Defender extends Soldier implements BaseFighter {
     public int running() {
 
         return 10;
-    }
-
-    public Defender(String name, int life) {
-
-        super(name, life);
     }
 }

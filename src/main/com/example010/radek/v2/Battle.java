@@ -7,11 +7,12 @@ import java.util.List;
 
 public class Battle {
 
-    public void battle(int rounds) throws NoSuchAlgorithmException {
+    private int rounds;
 
-        List<Soldier> soldiers = new ArrayList<>();
-        soldiers.add(new Fighter("Maximus Decimus Meridius", 10));
-        soldiers.add(new Universal("Commodus", 10));
+    private List<Soldier> soldiers = new ArrayList<>();
+
+    public void battle() throws NoSuchAlgorithmException {
+
         for (int i = 0; i < rounds; i++) {
             SecureRandom random = SecureRandom.getInstanceStrong();
             int attacker = random.nextInt(soldiers.size());
@@ -20,37 +21,45 @@ public class Battle {
                     soldiers.get(attacker).attack(soldiers.get(l));
                 }
             }
-            printSoldierStats(soldiers);
-            soldiers = removeDeathFromList(soldiers);
+            removeDeathSoldiers();
+            printSoldierStats();
         }
     }
 
-    public List<Soldier> removeDeathFromList(List<Soldier> soldiers) {
+    public void removeDeathSoldiers() {
 
         for (int l = soldiers.size() - 1; l >= 0; l--) {
             if (soldiers.get(l).getLife() <= 0) {
                 soldiers.remove(l);
             }
         }
-        if (soldiers.size() <= 1) {
-            StringBuilder winnerBuilder = new StringBuilder();
-            winnerBuilder.append("The winner is: ").append(soldiers.get(0).getName());
-            System.out.println(winnerBuilder);
-            System.exit(0);
-        }
-        return soldiers;
     }
 
-    public void printSoldierStats(List<Soldier> soldiers) {
+    public void printSoldierStats() {
 
-        StringBuilder resultBuilder = new StringBuilder();
-        soldiers.forEach((c) -> resultBuilder.append("Name: ")
+        StringBuilder soldierStatistic = new StringBuilder();
+        if (soldiers.size() <= 1) {
+            soldierStatistic.append("The winner is: ")
+                    .append(soldiers.get(0).getName());
+            System.out.println(soldierStatistic);
+            System.exit(0);
+        }
+        soldiers.forEach((c) -> soldierStatistic.append("Name: ")
                 .append(c.getName())
                 .append("\t")
                 .append(" Life: ")
                 .append(c.getLife())
                 .append("\n"));
-        System.out.println(resultBuilder.append("----------------------------"));
+        System.out.println(soldierStatistic.append("----------------------------"));
     }
 
+    public void setRounds(int rounds) {
+
+        this.rounds = rounds;
+    }
+
+    public void addSoldier(Soldier soldier) {
+
+        soldiers.add(soldier);
+    }
 }
