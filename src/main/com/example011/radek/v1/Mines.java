@@ -4,7 +4,6 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.Scanner;
 
-
 public class Mines {
 
     protected int playgroundSize;
@@ -15,7 +14,8 @@ public class Mines {
 
     public Mines(int size, int mines) {
 
-        if (setPlaygroundSize(size)) {
+        if (checkPlaygroundSize(size)) {
+            setPlaygroundSize(size);
             setNumberOfMines(mines);
         } else {
             System.out.println("Bad size of playground, size must be bigger then 5!");
@@ -32,8 +32,8 @@ public class Mines {
             int generatedRowNumber = random.nextInt(playgroundSize);
             int generatedColumnNumber = random.nextInt(playgroundSize);
             if (playground[generatedRowNumber][generatedColumnNumber] == null) {
-                playground[generatedRowNumber][generatedColumnNumber] = "x";
-                placedMines = placedMines + 1;
+                playground[generatedRowNumber][generatedColumnNumber] = StringConstant.MINE.getConstant();
+                placedMines++;
             }
         }
     }
@@ -41,18 +41,20 @@ public class Mines {
     public void printPlayground(boolean showMines) {
 
         System.out.println("Generating playground...");
-        StringBuilder printMessageBuilder = new StringBuilder(playgroundSize * playgroundSize * 3);
+        StringBuilder playingField = new StringBuilder(playgroundSize * playgroundSize * 3);
         for (int i = 0; i < playgroundSize; i++) {
-            for (int l = 0; l < playgroundSize; l++) {
-                if (playground[i][l] != null && ((showMines && playground[i][l].equals("x")) || playground[i][l].equals("o"))) {
-                    printMessageBuilder.append(playground[i][l]).append("\t");
+            for (int j = 0; j < playgroundSize; j++) {
+                if (playground[i][j] != null && ((showMines && playground[i][j].equals("x")) || playground[i][j].equals("o"))) {
+                    playingField.append(playground[i][j])
+                            .append(StringConstant.TABULATOR.getConstant());
                 } else {
-                    printMessageBuilder.append(" ").append("\t");
+                    playingField.append(StringConstant.EMPTY.getConstant())
+                            .append(StringConstant.TABULATOR.getConstant());
                 }
             }
-            printMessageBuilder.append("\n");
+            playingField.append(StringConstant.NEW_LINE.getConstant());
         }
-        System.out.println(printMessageBuilder);
+        System.out.println(playingField);
     }
 
     public void getSizeAndMines() {
@@ -60,13 +62,14 @@ public class Mines {
         System.out.println("Playground size is: " + playgroundSize + " and on this ground you can find: " + numberOfMines + " mines.");
     }
 
-    private boolean setPlaygroundSize(int size) {
+    private void setPlaygroundSize(int size) {
 
-        if (size >= 5) {
-            playgroundSize = size;
-            return true;
-        }
-        return false;
+        playgroundSize = size;
+    }
+
+    private boolean checkPlaygroundSize(int size) {
+
+        return size >= 5;
     }
 
     private int getPlaygroundSize() {
@@ -121,18 +124,15 @@ public class Mines {
             int columnNumber = getValidNumber();
             if (playground[rowNumber][columnNumber] == null || playground[rowNumber][columnNumber].equals("o")) {
                 System.out.println("You hit empty slot");
-                playground[rowNumber][columnNumber] = "o";
-                emptySpaceHit = emptySpaceHit + 1;
+                playground[rowNumber][columnNumber] = StringConstant.EMPTY_SLOT.getConstant();
+                emptySpaceHit++;
             } else {
                 printPlayground(true);
-                System.out.println("You hit mine ! You LOSE ! \n" +
-                        "( ͡° ︵ ͡°)");
+                System.out.println("You hit mine ! You LOSE ! \n( ͡° ︵ ͡°)");
                 System.exit(0);
             }
             printPlayground(false);
         }
-        System.out.println("Congratulations ! You WON ! \n" +
-                "( ͡° ͜ ͡°)"
-        );
+        System.out.println("Congratulations ! You WON ! \n( ͡° ͜ ͡°)");
     }
 }
