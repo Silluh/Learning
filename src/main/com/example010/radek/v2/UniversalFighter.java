@@ -1,18 +1,17 @@
 package main.com.example010.radek.v2;
 
-public class Fighter extends Soldier {
+public class UniversalFighter extends Soldier {
 
-    public Fighter(String name, int life) {
+    public UniversalFighter(String name, int life) {
+
         super(name, life);
     }
 
-    @Override
     public int attack() {
 
-        return 15;
+        return 10;
     }
 
-    @Override
     public void attack(Soldier soldier) {
 
         int damageDealt = attack() - soldier.defense();
@@ -25,13 +24,11 @@ public class Fighter extends Soldier {
         }
     }
 
-    @Override
     public int defense() {
 
-        return 5;
+        return 10;
     }
 
-    @Override
     public int running() {
 
         return 10;

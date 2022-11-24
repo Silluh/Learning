@@ -28,11 +28,10 @@ public class Battle {
 
     public void removeDeathSoldiers() {
 
-        for (int l = soldiers.size() - 1; l >= 0; l--) {
-            if (soldiers.get(l).getLife() <= 0) {
-                soldiers.remove(l);
-            }
-        }
+        soldiers.forEach(soldier -> {
+            if(soldier.getLife() <= 0){
+                soldiers.remove(soldier);}
+        });
     }
 
     public void printSoldierStats() {

@@ -11,25 +11,6 @@ public class Soldier {
         this.life = life;
     }
 
-    public int attack() {
-
-        return 0;
-    }
-
-    public void attack(Soldier soldier) {
-
-    }
-
-    public int defense() {
-
-        return 0;
-    }
-
-    public int running() {
-
-        return 0;
-    }
-
     public String getName() {
 
         return name;

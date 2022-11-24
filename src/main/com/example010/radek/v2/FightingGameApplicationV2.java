@@ -8,8 +8,8 @@ public class FightingGameApplicationV2 {
 
         Battle battle = new Battle();
         battle.setRounds(5);
-        battle.addSoldier(new Fighter("Maximus Decimus Meridius", 10));
-        battle.addSoldier(new Universal("Commodus", 10));
+        battle.addSoldier(new FighterFighter("Maximus Decimus Meridius", 10));
+        battle.addSoldier(new UniversalFighter("Commodus", 10));
         battle.battle();
     }
 }
