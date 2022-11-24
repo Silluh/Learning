@@ -3,6 +3,7 @@ package main.com.example011.radek.v1;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.Scanner;
+import static main.com.example011.radek.v1.StringConstant.*;
 
 public class Mines {
 
@@ -12,9 +13,13 @@ public class Mines {
 
     protected String[][] playground;
 
+    private final int MINIMUM_PLAYGROUND_SIZE = 5;
+
+    private final int MINIMUM_BOXES_PER_MINE = 10;
+
     public Mines(int size, int mines) {
 
-        if (checkPlaygroundSize(size)) {
+        if (isPlaygroundBiggerThenLimit(size)) {
             setPlaygroundSize(size);
             setNumberOfMines(mines);
         } else {
@@ -32,32 +37,47 @@ public class Mines {
             int generatedRowNumber = random.nextInt(playgroundSize);
             int generatedColumnNumber = random.nextInt(playgroundSize);
             if (playground[generatedRowNumber][generatedColumnNumber] == null) {
-                playground[generatedRowNumber][generatedColumnNumber] = StringConstant.MINE.getConstant();
+                playground[generatedRowNumber][generatedColumnNumber] = MINE.getValue();
                 placedMines++;
             }
         }
     }
 
+    private boolean isBoxNull(String value){
+
+        return value == null;
+    }
+
+    private boolean isMineInBox(String value){
+
+        return value.equals(MINE.getValue());
+    }
+
+    private boolean isBoxEmpty(String value){
+
+        return value.equals(EMPTY_SLOT.getValue());
+    }
+
     public void printPlayground(boolean showMines) {
 
         System.out.println("Generating playground...");
-        StringBuilder playingField = new StringBuilder(playgroundSize * playgroundSize * 3);
+        StringBuilder playingField = new StringBuilder();
         for (int i = 0; i < playgroundSize; i++) {
             for (int j = 0; j < playgroundSize; j++) {
-                if (playground[i][j] != null && ((showMines && playground[i][j].equals("x")) || playground[i][j].equals("o"))) {
+                if (!isBoxNull(playground[i][j]) && ((showMines && isMineInBox(playground[i][j]) || isBoxEmpty(playground[i][j])))) {
                     playingField.append(playground[i][j])
-                            .append(StringConstant.TABULATOR.getConstant());
+                            .append(TABULATOR.getValue());
                 } else {
-                    playingField.append(StringConstant.EMPTY.getConstant())
-                            .append(StringConstant.TABULATOR.getConstant());
+                    playingField.append(EMPTY.getValue())
+                            .append(TABULATOR.getValue());
                 }
             }
-            playingField.append(StringConstant.NEW_LINE.getConstant());
+            playingField.append(NEW_LINE.getValue());
         }
         System.out.println(playingField);
     }
 
-    public void getSizeAndMines() {
+    public void printSizeAndMines() {
 
         System.out.println("Playground size is: " + playgroundSize + " and on this ground you can find: " + numberOfMines + " mines.");
     }
@@ -67,9 +87,9 @@ public class Mines {
         playgroundSize = size;
     }
 
-    private boolean checkPlaygroundSize(int size) {
+    private boolean isPlaygroundBiggerThenLimit(int size) {
 
-        return size >= 5;
+        return size >= MINIMUM_PLAYGROUND_SIZE;
     }
 
     private int getPlaygroundSize() {
@@ -77,16 +97,30 @@ public class Mines {
         return playgroundSize;
     }
 
+    private boolean isThereMoreMinesThenBoxes(int mines){
+
+       return mines >= (playgroundSize * playgroundSize);
+    }
+
+    private boolean isPlaygroundBigEnoughForOneMine(){
+
+        return (playgroundSize * playgroundSize) < MINIMUM_BOXES_PER_MINE;
+    }
+
+    private boolean isPlaygroundBigEnoughToFitMines(int mines){
+
+        return ((playgroundSize * playgroundSize) / mines) < MINIMUM_BOXES_PER_MINE;
+    }
+
     private void setNumberOfMines(int mines) {
 
-        int size = getPlaygroundSize();
-        if (mines >= (size * size)) {
+        if (isThereMoreMinesThenBoxes(mines)) {
             System.out.println("You can't have more mines, then you have playground size !");
             System.exit(0);
-        } else if ((size * size) < 10) {
+        } else if (isPlaygroundBigEnoughForOneMine()) {
             System.out.println("To place mine, you need playground of minimum size of 10 boxes!");
             System.exit(0);
-        } else if (((size * size) / mines) < 10) {
+        } else if (isPlaygroundBigEnoughToFitMines(mines)) {
             System.out.println("There must be at least 10 boxes per 1 mine!");
             System.exit(0);
         } else {
@@ -124,7 +158,7 @@ public class Mines {
             int columnNumber = getValidNumber();
             if (playground[rowNumber][columnNumber] == null || playground[rowNumber][columnNumber].equals("o")) {
                 System.out.println("You hit empty slot");
-                playground[rowNumber][columnNumber] = StringConstant.EMPTY_SLOT.getConstant();
+                playground[rowNumber][columnNumber] = EMPTY_SLOT.getValue();
                 emptySpaceHit++;
             } else {
                 printPlayground(true);

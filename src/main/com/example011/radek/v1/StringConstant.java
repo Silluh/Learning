@@ -8,14 +8,14 @@ public enum StringConstant {
     MINE("x"),
     EMPTY_SLOT("o");
 
-    private final String Constant;
+    private final String value;
 
-    StringConstant(String Constant) {
-        this.Constant = Constant;
+    StringConstant(String value) {
+        this.value = value;
     }
 
-    public String getConstant() {
-        return this.Constant;
+    public String getValue() {
+        return this.value;
     }
 
 }

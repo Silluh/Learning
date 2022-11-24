@@ -6,7 +6,7 @@ public class MinesGameApplication {
     public static void main(String[] args) throws NoSuchAlgorithmException {
 
         Mines mines = new Mines(5, 2);
-        mines.getSizeAndMines();
+        mines.printSizeAndMines();
         mines.fillPlaygroundWithMines();
         mines.playerMove();
     }
