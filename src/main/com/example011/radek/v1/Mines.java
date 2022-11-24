@@ -3,6 +3,7 @@ package main.com.example011.radek.v1;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.Scanner;
+
 import static main.com.example011.radek.v1.StringConstant.*;
 
 public class Mines {
@@ -13,9 +14,9 @@ public class Mines {
 
     protected String[][] playground;
 
-    private final int MINIMUM_PLAYGROUND_SIZE = 5;
+    private static final int MINIMUM_PLAYGROUND_SIZE = 5;
 
-    private final int MINIMUM_BOXES_PER_MINE = 10;
+    private static final int MINIMUM_BOXES_PER_MINE = 10;
 
     public Mines(int size, int mines) {
 
@@ -23,7 +24,11 @@ public class Mines {
             setPlaygroundSize(size);
             setNumberOfMines(mines);
         } else {
-            System.out.println("Bad size of playground, size must be bigger then 5!");
+            StringBuilder playgroundSizeMessage = new StringBuilder();
+            playgroundSizeMessage.append("Bad size of playground, size must be bigger then ")
+                    .append(MINIMUM_PLAYGROUND_SIZE)
+                    .append("!");
+            System.out.println(playgroundSizeMessage);
             System.exit(0);
         }
     }
@@ -43,17 +48,17 @@ public class Mines {
         }
     }
 
-    private boolean isBoxNull(String value){
+    private boolean isBoxNull(String value) {
 
         return value == null;
     }
 
-    private boolean isMineInBox(String value){
+    private boolean isMineInBox(String value) {
 
         return value.equals(MINE.getValue());
     }
 
-    private boolean isBoxEmpty(String value){
+    private boolean isBoxEmpty(String value) {
 
         return value.equals(EMPTY_SLOT.getValue());
     }
@@ -64,7 +69,7 @@ public class Mines {
         StringBuilder playingField = new StringBuilder();
         for (int i = 0; i < playgroundSize; i++) {
             for (int j = 0; j < playgroundSize; j++) {
-                if (!isBoxNull(playground[i][j]) && ((showMines && isMineInBox(playground[i][j]) || isBoxEmpty(playground[i][j])))) {
+                if (!isBoxNull(playground[i][j]) && (showMines && isMineInBox(playground[i][j]) || isBoxEmpty(playground[i][j]))) {
                     playingField.append(playground[i][j])
                             .append(TABULATOR.getValue());
                 } else {
@@ -97,17 +102,17 @@ public class Mines {
         return playgroundSize;
     }
 
-    private boolean isThereMoreMinesThenBoxes(int mines){
+    private boolean isThereMoreMinesThenBoxes(int mines) {
 
-       return mines >= (playgroundSize * playgroundSize);
+        return mines >= (playgroundSize * playgroundSize);
     }
 
-    private boolean isPlaygroundBigEnoughForOneMine(){
+    private boolean isPlaygroundBigEnoughForOneMine() {
 
         return (playgroundSize * playgroundSize) < MINIMUM_BOXES_PER_MINE;
     }
 
-    private boolean isPlaygroundBigEnoughToFitMines(int mines){
+    private boolean isPlaygroundBigEnoughToFitMines(int mines) {
 
         return ((playgroundSize * playgroundSize) / mines) < MINIMUM_BOXES_PER_MINE;
     }
@@ -156,7 +161,7 @@ public class Mines {
         while (emptySpaceHit < (playgroundSize * playgroundSize) - numberOfMines) {
             int rowNumber = getValidNumber();
             int columnNumber = getValidNumber();
-            if (playground[rowNumber][columnNumber] == null || playground[rowNumber][columnNumber].equals("o")) {
+            if (!isBoxNull(playground[rowNumber][columnNumber]) || isBoxEmpty(playground[rowNumber][columnNumber])) {
                 System.out.println("You hit empty slot");
                 playground[rowNumber][columnNumber] = EMPTY_SLOT.getValue();
                 emptySpaceHit++;
