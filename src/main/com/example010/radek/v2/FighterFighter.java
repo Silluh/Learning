@@ -1,20 +1,26 @@
 package main.com.example010.radek.v2;
 
-public class FighterFighter extends Soldier {
+public class FighterFighter implements BaseFighter{
+
+    private String name;
+
+    private int life;
 
     public FighterFighter(String name, int life) {
-        super(name, life);
+        this.name = name;
+        this.life = life;
     }
 
-
-    public int attack() {
+    @Override
+    public int getAttack() {
 
         return 15;
     }
 
-    public void attack(Soldier soldier) {
+    @Override
+    public void attack(BaseFighter soldier) {
 
-        int damageDealt = attack() - soldier.defense();
+        int damageDealt = getAttack() - soldier.getDefense();
         int remainingHealth = soldier.getLife() - damageDealt;
         soldier.setLife(remainingHealth);
         if (remainingHealth <= 0) {
@@ -24,13 +30,24 @@ public class FighterFighter extends Soldier {
         }
     }
 
-    public int defense() {
+    @Override
+    public int getDefense() {
 
         return 5;
     }
 
-    public int running() {
+    @Override
+    public String getName() {
+        return name;
+    }
 
-        return 10;
+    @Override
+    public int getLife() {
+        return life;
+    }
+
+    @Override
+    public void setLife(int life) {
+        this.life = life;
     }
 }

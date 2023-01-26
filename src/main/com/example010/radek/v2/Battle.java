@@ -9,7 +9,7 @@ public class Battle {
 
     private int rounds;
 
-    private List<Soldier> soldiers = new ArrayList<>();
+    private List<BaseFighter> soldiers = new ArrayList<>();
 
     public void battle() throws NoSuchAlgorithmException {
 
@@ -28,10 +28,11 @@ public class Battle {
 
     public void removeDeathSoldiers() {
 
-        soldiers.forEach(soldier -> {
-            if(soldier.getLife() <= 0){
-                soldiers.remove(soldier);}
-        });
+        for (int l = soldiers.size() - 1; l >= 0; l--) {
+            if (soldiers.get(l).getLife() <= 0) {
+                soldiers.remove(l);
+            }
+        }
     }
 
     public void printSoldierStats() {
@@ -57,7 +58,7 @@ public class Battle {
         this.rounds = rounds;
     }
 
-    public void addSoldier(Soldier soldier) {
+    public void addSoldier(BaseFighter soldier) {
 
         soldiers.add(soldier);
     }

@@ -2,13 +2,16 @@ package main.com.example010.radek.v2;
 
 public interface BaseFighter {
 
-    int attack();
+    int getAttack();
 
-    void attack(Soldier soldier);
+    void attack(BaseFighter soldier);
 
-    int defense();
+    int getDefense();
 
-    int running();
+    int getLife();
 
+    String getName();
+
+    void setLife(int life);
 
 }

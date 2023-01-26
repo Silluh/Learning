@@ -1,24 +1,46 @@
 package main.com.example010.radek.v2;
 
-public class DefenderFighter extends Soldier implements BaseFighter {
+public class DefenderFighter implements BaseFighter {
+
+    private String name;
+
+    private int life;
 
     public DefenderFighter(String name, int life) {
 
-        super(name, life);
+        this.name = name;
+        this.life = life;
     }
 
-    public int attack() {
+    @Override
+    public int getAttack() {
 
         return 5;
     }
 
-    public int defense() {
+    @Override
+    public void attack(BaseFighter soldier) {
+
+    }
+
+    @Override
+    public int getDefense() {
 
         return 15;
     }
 
-    public int running() {
+    @Override
+    public String getName() {
+        return name;
+    }
 
-        return 10;
+    @Override
+    public int getLife() {
+        return life;
+    }
+
+    @Override
+    public void setLife(int life) {
+        this.life = life;
     }
 }
