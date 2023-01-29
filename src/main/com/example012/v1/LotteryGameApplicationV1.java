@@ -1,6 +1,6 @@
 package main.com.example012.v1;
 
-public class LotteryGameApplication {
+public class LotteryGameApplicationV1 {
 
     public static void main(String[] args) {
 
