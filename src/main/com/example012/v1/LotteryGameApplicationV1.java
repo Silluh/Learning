@@ -1,16 +1,14 @@
 package main.com.example012.v1;
 
+import main.com.example012.v1.controller.LotteryGameController;
+import main.com.example012.v1.model.Lottery;
+
 public class LotteryGameApplicationV1 {
 
     public static void main(String[] args) {
 
-        LotteryGame lotteryGame = new LotteryGame();
-        lotteryGame.lotteryGame(Company.SPORTKA, 100000);
-        lotteryGame.sortResults();
-        lotteryGame.printGameResults();
-        LotteryGame lotteryGame2 = new LotteryGame();
-        lotteryGame2.lotteryGame(Company.STASTNYCH10, 10000);
-        lotteryGame2.sortResults();
-        lotteryGame2.printGameResults();
+        LotteryGameController lottery = new LotteryGameController(Lottery.SPORTKA, 100000);
+
+        LotteryGameController lottery1 = new LotteryGameController(Lottery.STASTNYCH10, 50000);
     }
 }

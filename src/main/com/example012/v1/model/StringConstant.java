@@ -1,10 +1,9 @@
-package main.com.example012.v1;
+package main.com.example012.v1.model;
 
 public enum StringConstant {
 
     TABULATOR("\t"),
     NEW_LINE("\n");
-
     private final String value;
 
     StringConstant(String value) {
@@ -12,6 +11,6 @@ public enum StringConstant {
     }
 
     public String getValue() {
-        return this.value;
+        return value;
     }
 }

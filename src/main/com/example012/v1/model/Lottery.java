@@ -1,26 +1,25 @@
-package main.com.example012.v1;
+package main.com.example012.v1.model;
 
-public enum Company {
+public enum Lottery {
 
     SPORTKA("Sportka", 49, 6),
     STASTNYCH10("Štastných 10", 80, 10),
     EUROJACKPOT("Eurojackpot", 50, 5);
 
-
-    final String company;
+    final String name;
     final int maxNumber;
     final int maxGuessedNumbers;
 
-    Company(String company, int maxNumber, int maxGuessedNumbers) {
+    Lottery(String name, int maxNumber, int maxGuessedNumbers) {
 
-        this.company = company;
+        this.name = name;
         this.maxNumber = maxNumber;
         this.maxGuessedNumbers = maxGuessedNumbers;
     }
 
     public String getCompany() {
 
-        return company;
+        return name;
     }
 
     public int getMaxNumber() {
