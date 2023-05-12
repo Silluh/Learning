@@ -8,5 +8,6 @@ public class RenameFilesApplication {
     public static void main(String[] args) {
 
         FileManagerController controller = new FileManagerController(new UserParameters());
+        controller.renameFilesInFolder();
     }
 }

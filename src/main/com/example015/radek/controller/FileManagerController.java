@@ -3,25 +3,31 @@ package main.com.example015.radek.controller;
 import main.com.example015.radek.model.UserParameters;
 
 import java.io.File;
+import java.util.Objects;
 import java.util.Scanner;
 
 import static main.com.example015.radek.model.StringConstant.*;
 
 public class FileManagerController {
 
-    private UserParameters user;
+    private final UserParameters user;
 
     public FileManagerController(UserParameters user) {
         this.user = user;
         initUser();
-        renameFilesInFolder();
     }
 
     public void renameFilesInFolder() {
         File actual = user.getFile();
-        for (File f : actual.listFiles()) {
+        for (File f : Objects.requireNonNull(actual.listFiles())) {
             File newFile = new File(user.getPath() + '\\' + getNewFileName(f.getName()));
-            f.renameTo(newFile);
+            if (!f.renameTo(newFile)) {
+                System.out.println("Renaming file: " +
+                        f.getName() +
+                        " to: " +
+                        getNewFileName(f.getName()) +
+                        " has failed!");
+            }
         }
     }
 
@@ -40,7 +46,7 @@ public class FileManagerController {
         System.out.println(message);
         String input = "";
         Scanner scanner = new Scanner(System.in);
-        while (input.equals(null) || input.trim().isEmpty()) {
+        while (input == null || input.trim().isEmpty()) {
             input = scanner.nextLine();
         }
         return input;
