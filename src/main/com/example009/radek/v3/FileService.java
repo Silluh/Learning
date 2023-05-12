@@ -2,6 +2,7 @@ package main.com.example009.radek.v3;
 
 import java.io.*;
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class FileService {
@@ -85,7 +86,7 @@ public class FileService {
         File directory = new File(PATH_FILE_RESULTS);
         String[] files = directory.list();
         if (anyFileExist(directory) && shouldLoadResultsFromFile()) {
-            StringBuilder previousFiles = new StringBuilder(files.length);
+            StringBuilder previousFiles = new StringBuilder(Objects.requireNonNull(files).length);
             for (int i = 0; i < files.length; i++) {
                 previousFiles.append(i + 1)
                         .append(" - ")

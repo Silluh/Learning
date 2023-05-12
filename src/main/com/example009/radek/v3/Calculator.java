@@ -62,7 +62,7 @@ class Calculator {
         fileService.storeResultsIntoFile(list);
     }
 
-    void StoreResult() {
+    void storeResult() {
 
         list.add(this.result);
     }
