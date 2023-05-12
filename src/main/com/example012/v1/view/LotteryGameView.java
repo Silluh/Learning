@@ -1,36 +1,36 @@
 package main.com.example012.v1.view;
 
 import main.com.example012.v1.model.Lottery;
+import main.com.example012.v1.model.StringConstant;
 
 import java.util.Arrays;
 
-import static main.com.example012.v1.model.StringConstant.*;
 
 public class LotteryGameView {
 
-    private StringBuilder results = new StringBuilder();
+    private final StringBuilder results = new StringBuilder();
 
     public void printResults(int[] winningNumbers, int numberOfTickets, Lottery lottery, int[] rightGuesses) {
 
         results.append("Game: ")
                 .append(lottery.getCompany())
-                .append(NEW_LINE.getValue())
+                .append(StringConstant.NEW_LINE)
                 .append("Winning numbers: ");
 
         Arrays.stream(winningNumbers).forEach(c -> results.append(c)
-                .append(TABULATOR.getValue()));
+                .append(StringConstant.TABULATOR));
 
-        results.append(NEW_LINE.getValue())
+        results.append(StringConstant.NEW_LINE)
                 .append("Number of placed tickets: ")
                 .append(numberOfTickets)
-                .append(NEW_LINE.getValue());
+                .append(StringConstant.NEW_LINE);
 
         for (int i = 0; i <= lottery.getMaxGuessedNumbers(); i++) {
             results.append("Number of tickets with ")
                     .append(i)
                     .append(" right guesses: ")
                     .append(rightGuesses[i])
-                    .append(NEW_LINE.getValue());
+                    .append(StringConstant.NEW_LINE);
         }
         System.out.println(results);
     }

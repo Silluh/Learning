@@ -11,19 +11,25 @@ import java.util.UUID;
 
 public class LotteryGameController {
 
-    private Lottery lottery;
+    private final Lottery lottery;
     private Ticket WinningTicket;
-    private Ticket[] tickets;
-    private LotteryGameView view = new LotteryGameView();
-    private SecureRandom random = new SecureRandom();
+    private final Ticket[] tickets;
+    private final LotteryGameView view = new LotteryGameView();
+    private final int numberOfTickets;
+    private final SecureRandom random = new SecureRandom();
 
     public LotteryGameController(Lottery lotteryType, int numberOfTickets) {
+
         this.lottery = lotteryType;
+        this.numberOfTickets = numberOfTickets;
         this.tickets = new Ticket[numberOfTickets];
+    }
+
+    public void play() {
+
         generateTickets(numberOfTickets);
         generateWinningTicket();
-        view.printResults(WinningTicket.getLotteryTicketNumbers(), numberOfTickets, lotteryType, correctNumbersFromTickets());
-
+        view.printResults(WinningTicket.getLotteryTicketNumbers(), numberOfTickets, lottery, correctNumbersFromTickets());
     }
 
     public void generateTickets(int numberOfTickets) {
@@ -57,29 +63,25 @@ public class LotteryGameController {
 
     public boolean uniqueNumberInArray(int[] numbers, int searchedNumber) {
 
-        if (!Arrays.stream(numbers).boxed().toList().contains(searchedNumber)) {
-            return true;
-        } else {
-            return false;
-        }
+        return !Arrays.stream(numbers).boxed().toList().contains(searchedNumber);
     }
 
     public int totalCorrectNumbers(int[] numbers, int[] searchedNumber) {
 
         int correctNumbers = 0;
-        for(int i = 0; i < searchedNumber.length; i++){
-            if (Arrays.stream(numbers).boxed().toList().contains(searchedNumber[i])) {
+        for (int j : searchedNumber) {
+            if (Arrays.stream(numbers).boxed().toList().contains(j)) {
                 correctNumbers++;
             }
         }
         return correctNumbers;
     }
 
-    public int[] correctNumbersFromTickets(){
+    public int[] correctNumbersFromTickets() {
 
         int[] correctNumbers = new int[lottery.getMaxGuessedNumbers() + 1];
-        for(int i = 0; i < tickets.length; i++){
-            correctNumbers[totalCorrectNumbers(tickets[i].getLotteryTicketNumbers(), WinningTicket.getLotteryTicketNumbers())] ++;
+        for (Ticket ticket : tickets) {
+            correctNumbers[totalCorrectNumbers(ticket.getLotteryTicketNumbers(), WinningTicket.getLotteryTicketNumbers())]++;
         }
         return correctNumbers;
     }

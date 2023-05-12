@@ -1,16 +1,7 @@
 package main.com.example012.v1.model;
 
-public enum StringConstant {
+public class StringConstant {
 
-    TABULATOR("\t"),
-    NEW_LINE("\n");
-    private final String value;
-
-    StringConstant(String value) {
-        this.value = value;
-    }
-
-    public String getValue() {
-        return value;
-    }
+    public static final String TABULATOR = "\t";
+    public static final String NEW_LINE = "\n";
 }
