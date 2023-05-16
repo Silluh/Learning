@@ -20,7 +20,7 @@ public class FileManagerController {
     public void renameFilesInFolder() {
         File actual = user.getFile();
         for (File f : Objects.requireNonNull(actual.listFiles())) {
-            File newFile = new File(user.getPath() + '\\' + getNewFileName(f.getName()));
+            File newFile = new File(user.getPath() + File.separator + getNewFileName(f.getName()));
             if (!f.renameTo(newFile)) {
                 System.out.println("Renaming file: " +
                         f.getName() +
@@ -33,12 +33,9 @@ public class FileManagerController {
 
     public String getNewFileName(String fileName) {
 
-        if (fileName.contains(FIND.getValue())) {
-            fileName = fileName.replace(FIND.getValue().subSequence(0, FIND.getValue().length()), REPLACE.getValue().subSequence(0, REPLACE.getValue().length()));
-        }
-        if (fileName.contains(FIND_2.getValue())) {
-            fileName = fileName.replace(FIND_2.getValue().subSequence(0, FIND_2.getValue().length()), REPLACE_2.getValue().subSequence(0, REPLACE_2.getValue().length()));
-        }
+        fileName = fileName.replace(FIND.getValue().subSequence(0, FIND.getValue().length()), REPLACE.getValue().subSequence(0, REPLACE.getValue().length()));
+        fileName = fileName.replace(FIND_2.getValue().subSequence(0, FIND_2.getValue().length()), REPLACE_2.getValue().subSequence(0, REPLACE_2.getValue().length()));
+
         return fileName;
     }
 
