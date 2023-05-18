@@ -1,22 +1,23 @@
 package main.com.example012.v1.model;
 
+import java.util.HashSet;
 import java.util.UUID;
 
 public class Ticket {
 
-    private int[] lotteryTicketNumbers;
+    private HashSet<Integer> lotteryTicketNumbers;
     private UUID id;
 
-    public Ticket(int[] lotteryTicketNumbers, UUID id) {
+    public Ticket(HashSet<Integer> lotteryTicketNumbers, UUID id) {
         setLotteryTicketNumbers(lotteryTicketNumbers);
         setId(id);
     }
 
-    public int[] getLotteryTicketNumbers() {
+    public HashSet<Integer> getLotteryTicketNumbers() {
         return lotteryTicketNumbers;
     }
 
-    public void setLotteryTicketNumbers(int[] lotteryTicketNumbers) {
+    public void setLotteryTicketNumbers(HashSet<Integer> lotteryTicketNumbers) {
         this.lotteryTicketNumbers = lotteryTicketNumbers;
     }
 

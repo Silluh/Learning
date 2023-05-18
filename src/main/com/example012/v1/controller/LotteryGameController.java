@@ -6,13 +6,13 @@ import main.com.example012.v1.model.Ticket;
 import main.com.example012.v1.view.LotteryGameView;
 
 import java.security.SecureRandom;
-import java.util.Arrays;
+import java.util.HashSet;
 import java.util.UUID;
 
 public class LotteryGameController {
 
     private final Lottery lottery;
-    private Ticket WinningTicket;
+    private Ticket winningTicket;
     private final Ticket[] tickets;
     private final LotteryGameView view = new LotteryGameView();
     private final int numberOfTickets;
@@ -29,13 +29,13 @@ public class LotteryGameController {
 
         generateTickets(numberOfTickets);
         generateWinningTicket();
-        view.printResults(WinningTicket.getLotteryTicketNumbers(), numberOfTickets, lottery, correctNumbersFromTickets());
+        view.printResults(winningTicket.getLotteryTicketNumbers(), numberOfTickets, lottery, correctNumbersFromTickets());
     }
 
     public void generateTickets(int numberOfTickets) {
 
         for (int i = 0; i < numberOfTickets; i++) {
-            int[] lotteryNumbers = generateUniqueNumbers();
+            HashSet<Integer> lotteryNumbers = generateUniqueNumbers();
             Ticket ticket = new Ticket(lotteryNumbers, UUID.randomUUID());
             tickets[i] = ticket;
         }
@@ -43,34 +43,24 @@ public class LotteryGameController {
 
     public void generateWinningTicket() {
 
-        int[] lotteryNumbers = generateUniqueNumbers();
-        WinningTicket = new Ticket(lotteryNumbers, UUID.randomUUID());
+        HashSet<Integer> lotteryNumbers = generateUniqueNumbers();
+        winningTicket = new Ticket(lotteryNumbers, UUID.randomUUID());
     }
 
-    public int[] generateUniqueNumbers() {
+    public HashSet<Integer> generateUniqueNumbers() {
 
-        int[] lotteryNumbers = new int[lottery.getMaxGuessedNumbers()];
-        for (int j = 0; j < lottery.getMaxGuessedNumbers(); j++) {
-            int randomNumber = random.nextInt(lottery.getMaxNumber());
-            if (uniqueNumberInArray(lotteryNumbers, randomNumber)) {
-                lotteryNumbers[j] = randomNumber;
-            } else {
-                j--;
-            }
+        HashSet<Integer> lotteryNumbers = new HashSet<>();
+        while (!(lotteryNumbers.size() == lottery.getMaxGuessedNumbers())) {
+            lotteryNumbers.add(random.nextInt(lottery.getMaxNumber()));
         }
         return lotteryNumbers;
     }
 
-    public boolean uniqueNumberInArray(int[] numbers, int searchedNumber) {
-
-        return !Arrays.stream(numbers).boxed().toList().contains(searchedNumber);
-    }
-
-    public int totalCorrectNumbers(int[] numbers, int[] searchedNumber) {
+    public int totalCorrectNumbers(HashSet<Integer> numbers, HashSet<Integer> searchedNumber) {
 
         int correctNumbers = 0;
         for (int j : searchedNumber) {
-            if (Arrays.stream(numbers).boxed().toList().contains(j)) {
+            if (numbers.contains(j)) {
                 correctNumbers++;
             }
         }
@@ -81,7 +71,7 @@ public class LotteryGameController {
 
         int[] correctNumbers = new int[lottery.getMaxGuessedNumbers() + 1];
         for (Ticket ticket : tickets) {
-            correctNumbers[totalCorrectNumbers(ticket.getLotteryTicketNumbers(), WinningTicket.getLotteryTicketNumbers())]++;
+            correctNumbers[totalCorrectNumbers(ticket.getLotteryTicketNumbers(), winningTicket.getLotteryTicketNumbers())]++;
         }
         return correctNumbers;
     }

@@ -10,7 +10,8 @@ public enum Lottery {
     final int maxNumber;
     final int maxGuessedNumbers;
 
-    Lottery(String name, int maxNumber, int maxGuessedNumbers) {
+    Lottery(
+            String name, int maxNumber, int maxGuessedNumbers) {
 
         this.name = name;
         this.maxNumber = maxNumber;
