@@ -18,7 +18,6 @@ public class LotteryGameController {
     private final LotteryGameView view = new LotteryGameView();
     private final int numberOfTickets;
     private final SecureRandom random = new SecureRandom();
-    private final Set<Integer> lotteryNumbers = new HashSet<>();
 
     public LotteryGameController(Lottery lotteryType, int numberOfTickets) {
 
@@ -37,23 +36,23 @@ public class LotteryGameController {
     public void generateTickets(int numberOfTickets) {
 
         for (int i = 0; i < numberOfTickets; i++) {
-            generateUniqueNumbers();
-            Ticket ticket = new Ticket(lotteryNumbers, UUID.randomUUID());
+            Ticket ticket = new Ticket(generateUniqueNumbers(), UUID.randomUUID());
             tickets[i] = ticket;
         }
     }
 
     public void generateWinningTicket() {
 
-        generateUniqueNumbers();
-        winningTicket = new Ticket(lotteryNumbers, UUID.randomUUID());
+        winningTicket = new Ticket(generateUniqueNumbers(), UUID.randomUUID());
     }
 
-    private void generateUniqueNumbers() {
+    private Set<Integer> generateUniqueNumbers() {
 
-        while (!(lotteryNumbers.size() == lottery.getMaxGuessedNumbers())) {
-            lotteryNumbers.add(random.nextInt(lottery.getMaxNumber()));
+        Set<Integer> uniqueNumbers = new HashSet<>();
+        while (!(uniqueNumbers.size() == lottery.getMaxGuessedNumbers())) {
+            uniqueNumbers.add(random.nextInt(lottery.getMaxNumber()));
         }
+        return uniqueNumbers;
     }
 
     public int totalCorrectNumbers(Set<Integer> numbers, Set<Integer> searchedNumber) {
