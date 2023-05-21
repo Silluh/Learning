@@ -13,7 +13,7 @@ public class SaveDataController implements ActionListener {
     private Statement statement;
     private Connection conn;
 
-    public SaveDataController(FormView formView){
+    public SaveDataController(FormView formView) {
 
         this.formView = formView;
 
@@ -73,7 +73,7 @@ public class SaveDataController implements ActionListener {
         return timestamp;
     }
 
-    private Timestamp getTimeStampFromView(){
+    private Timestamp getTimeStampFromView() {
 
 
         Calendar calendar = Calendar.getInstance();
@@ -82,27 +82,26 @@ public class SaveDataController implements ActionListener {
         int hours = (int) (time / (1000 * 60 * 60)) % 24;
         int minutes = (int) (time / (1000 * 60)) % 60;
         int seconds = (int) (time / 1000) % 60;
-        calendar.add(Calendar.HOUR_OF_DAY, hours );
+        calendar.add(Calendar.HOUR_OF_DAY, hours);
         calendar.add(Calendar.MINUTE, minutes);
         calendar.add(Calendar.SECOND, seconds);
-        return   new Timestamp(calendar.getTimeInMillis());
+        return new Timestamp(calendar.getTimeInMillis());
     }
 
-    private void createDatabase(){
+    private void createDatabase() {
 
-        try{
+        try {
             String query = "CREATE TABLE userFormExample16(Id INT NOT NULL GENERATED ALWAYS AS IDENTITY, Date Timestamp)";
             System.out.println(statement.execute(query));
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
             System.out.println("Database is already created");
         }
     }
 
-    private void initDatabase(){
+    private void initDatabase() {
 
         try {
-            conn = DriverManager.getConnection( "jdbc:derby:sampleDB;create=true");
+            conn = DriverManager.getConnection("jdbc:derby:sampleDB;create=true");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
