@@ -3,15 +3,13 @@ package main.com.example012.v1.view;
 import main.com.example012.v1.model.Lottery;
 import main.com.example012.v1.model.StringConstant;
 
-import java.util.Arrays;
-import java.util.HashSet;
-
+import java.util.Set;
 
 public class LotteryGameView {
 
     private final StringBuilder results = new StringBuilder();
 
-    public void printResults(HashSet<Integer> winningNumbers, int numberOfTickets, Lottery lottery, int[] rightGuesses) {
+    public void printResults(Set<Integer> winningNumbers, int numberOfTickets, Lottery lottery, int[] rightGuesses) {
 
         results.append("Game: ")
                 .append(lottery.getCompany())

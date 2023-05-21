@@ -7,6 +7,7 @@ import main.com.example012.v1.view.LotteryGameView;
 
 import java.security.SecureRandom;
 import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 
 public class LotteryGameController {
@@ -17,6 +18,7 @@ public class LotteryGameController {
     private final LotteryGameView view = new LotteryGameView();
     private final int numberOfTickets;
     private final SecureRandom random = new SecureRandom();
+    private final Set<Integer> lotteryNumbers = new HashSet<>();
 
     public LotteryGameController(Lottery lotteryType, int numberOfTickets) {
 
@@ -35,7 +37,7 @@ public class LotteryGameController {
     public void generateTickets(int numberOfTickets) {
 
         for (int i = 0; i < numberOfTickets; i++) {
-            HashSet<Integer> lotteryNumbers = generateUniqueNumbers();
+            generateUniqueNumbers();
             Ticket ticket = new Ticket(lotteryNumbers, UUID.randomUUID());
             tickets[i] = ticket;
         }
@@ -43,26 +45,22 @@ public class LotteryGameController {
 
     public void generateWinningTicket() {
 
-        HashSet<Integer> lotteryNumbers = generateUniqueNumbers();
+        generateUniqueNumbers();
         winningTicket = new Ticket(lotteryNumbers, UUID.randomUUID());
     }
 
-    public HashSet<Integer> generateUniqueNumbers() {
+    private void generateUniqueNumbers() {
 
-        HashSet<Integer> lotteryNumbers = new HashSet<>();
         while (!(lotteryNumbers.size() == lottery.getMaxGuessedNumbers())) {
             lotteryNumbers.add(random.nextInt(lottery.getMaxNumber()));
         }
-        return lotteryNumbers;
     }
 
-    public int totalCorrectNumbers(HashSet<Integer> numbers, HashSet<Integer> searchedNumber) {
+    public int totalCorrectNumbers(Set<Integer> numbers, Set<Integer> searchedNumber) {
 
         int correctNumbers = 0;
         for (int j : searchedNumber) {
-            if (numbers.contains(j)) {
-                correctNumbers++;
-            }
+            if (numbers.contains(j)) correctNumbers++;
         }
         return correctNumbers;
     }
