@@ -66,7 +66,7 @@ public class LotteryGameController {
 
     public int[] correctNumbersFromTickets() {
 
-        int[] correctNumbers = new int[lottery.getMaxGuessedNumbers() + 1];
+        int[] correctNumbers = new int[lottery.getMaxCorrectPossibilities()];
         for (Ticket ticket : tickets) {
             correctNumbers[totalCorrectNumbers(ticket.getLotteryTicketNumbers(), winningTicket.getLotteryTicketNumbers())]++;
         }
