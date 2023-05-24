@@ -51,7 +51,7 @@
                     <finalName>${project.build.finalName}-${timestamp}</finalName>
                     <archive>
                         <manifest>
-                            <mainClass>robot.Main</mainClass>
+                            <mainClass>com.daniel.robot7.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

@@ -1,4 +1,4 @@
-package robot.gui.swing.tab.graph.window;
+package com.daniel.robot7.swing.tab.graph.window;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -25,16 +25,16 @@ import javax.swing.tree.TreeModel;
 
 import org.apache.commons.collections15.functors.ConstantTransformer;
 
-import robot.controller.graphTab.ChangeCheckboxShowHyperbolController;
-import robot.controller.graphTab.ChangeLayoutController;
-import robot.controller.graphTab.ClickToVertexController;
-import robot.controller.graphTab.CloseGraphWindowController;
-import robot.controller.graphTab.ExportGraph;
-import robot.controller.graphTab.ZoomMinusController;
-import robot.controller.graphTab.ZoomPlusController;
-import robot.gui.swing.common.ui.CommonColors;
-import robot.gui.swing.metadata.tab.GraphMetadata;
-import robot.util.CommonConstants;
+import com.daniel.robot7.controller.graphTab.ChangeCheckboxShowHyperbolController;
+import com.daniel.robot7.controller.graphTab.ChangeLayoutController;
+import com.daniel.robot7.controller.graphTab.ClickToVertexController;
+import com.daniel.robot7.controller.graphTab.CloseGraphWindowController;
+import com.daniel.robot7.controller.graphTab.ExportGraph;
+import com.daniel.robot7.controller.graphTab.ZoomMinusController;
+import com.daniel.robot7.controller.graphTab.ZoomPlusController;
+import com.daniel.robot7.swing.common.ui.CommonColors;
+import com.daniel.robot7.swing.metadata.tab.GraphMetadata;
+import com.daniel.robot7.util.CommonConstants;
 import edu.uci.ics.jung.algorithms.layout.BalloonLayout;
 import edu.uci.ics.jung.algorithms.layout.TreeLayout;
 import edu.uci.ics.jung.graph.DelegateForest;
@@ -141,7 +141,7 @@ public class WindowGraph extends JApplet {
 	private DefaultModalGraphMouse<Float, Float>						graphMouse;
 
 	/** The operating system ui. */
-	private final robot.gui.swing.common.ui.AbstractOperatingSystemUI	operatingSystemUI;
+	private final com.daniel.robot7.swing.common.ui.AbstractOperatingSystemUI	operatingSystemUI;
 
 	/**
 	 * Gets the scaling control.

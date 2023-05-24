@@ -2,16 +2,16 @@
  * Package spider.controller.common
  *
  **/
-package robot.controller.searchCriteriaTab;
+package com.daniel.robot7.controller.searchCriteriaTab;
 
 import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
 import javax.swing.text.DocumentFilter;
 
-import robot.gui.swing.common.MessageWindow;
-import robot.gui.swing.metadata.tab.SearchCriteriaMetedata;
-import robot.util.CommonConstants;
+import com.daniel.robot7.swing.common.MessageWindow;
+import com.daniel.robot7.swing.metadata.tab.SearchCriteriaMetedata;
+import com.daniel.robot7.util.CommonConstants;
 
 /**
  * The Class LongFilter.

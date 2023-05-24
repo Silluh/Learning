@@ -2,7 +2,7 @@
  * Package spider.gui.swing
  *
  */
-package robot.gui.swing;
+package com.daniel.robot7.swing;
 
 import java.awt.Color;
 import java.awt.Container;
@@ -20,23 +20,23 @@ import javax.swing.JTabbedPane;
 import javax.swing.Timer;
 import javax.swing.border.TitledBorder;
 
-import robot.controller.mainButtonsPanel.TimerDefaultActionListener;
-import robot.controller.resultTab.CrawlerThread;
-import robot.gui.swing.common.MainButtonsPanel;
-import robot.gui.swing.common.ui.AbstractOperatingSystemUI;
-import robot.gui.swing.common.ui.CommonColors;
-import robot.gui.swing.common.ui.CommonFonts;
-import robot.gui.swing.metadata.MainWindowMetadata;
-import robot.gui.swing.metadata.tab.GraphMetadata;
-import robot.gui.swing.metadata.tab.LogMetadata;
-import robot.gui.swing.metadata.tab.ResultMetadata;
-import robot.gui.swing.metadata.tab.SearchCriteriaMetedata;
-import robot.gui.swing.tab.graph.GraphTab;
-import robot.gui.swing.tab.log.ErrorLogTab;
-import robot.gui.swing.tab.result.ResultTreeTab;
-import robot.gui.swing.tab.searchCriteria.SearchCriteriaTab;
-import robot.model.StatisticsModel;
-import robot.util.CommonConstants;
+import com.daniel.robot7.controller.mainButtonsPanel.TimerDefaultActionListener;
+import com.daniel.robot7.controller.resultTab.CrawlerThread;
+import com.daniel.robot7.swing.common.MainButtonsPanel;
+import com.daniel.robot7.swing.common.ui.AbstractOperatingSystemUI;
+import com.daniel.robot7.swing.common.ui.CommonColors;
+import com.daniel.robot7.swing.common.ui.CommonFonts;
+import com.daniel.robot7.swing.metadata.MainWindowMetadata;
+import com.daniel.robot7.swing.metadata.tab.GraphMetadata;
+import com.daniel.robot7.swing.metadata.tab.LogMetadata;
+import com.daniel.robot7.swing.metadata.tab.ResultMetadata;
+import com.daniel.robot7.swing.metadata.tab.SearchCriteriaMetedata;
+import com.daniel.robot7.swing.tab.graph.GraphTab;
+import com.daniel.robot7.swing.tab.log.ErrorLogTab;
+import com.daniel.robot7.swing.tab.result.ResultTreeTab;
+import com.daniel.robot7.swing.tab.searchCriteria.SearchCriteriaTab;
+import com.daniel.robot7.model.StatisticsModel;
+import com.daniel.robot7.util.CommonConstants;
 
 /**
  * The Class MainWindow.

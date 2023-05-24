@@ -2,12 +2,12 @@
  * Package crawler.controller.resultTab
  *
  **/
-package robot.controller.resultTab;
+package com.daniel.robot7.controller.resultTab;
 
 import java.util.HashSet;
 import java.util.Set;
 
-import robot.util.CommonConstants;
+import com.daniel.robot7.util.CommonConstants;
 
 /**
  * The Class DictionaryUtil.

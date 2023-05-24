@@ -2,7 +2,7 @@
  * Package spider.controller.resultTab
  *
  **/
-package robot.controller.resultTab;
+package com.daniel.robot7.controller.resultTab;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -33,13 +33,13 @@ import org.jsoup.safety.Cleaner;
 import org.jsoup.safety.Whitelist;
 import org.jsoup.select.Elements;
 
-import robot.gui.swing.MainWindow;
-import robot.gui.swing.metadata.tab.LogMetadata;
-import robot.gui.swing.metadata.tab.ResultMetadata;
-import robot.gui.swing.tab.result.UrlNodeRenderer;
-import robot.gui.swing.tab.result.UrlTreeNode;
-import robot.model.SearchCriteriaModel;
-import robot.util.CommonConstants;
+import com.daniel.robot7.swing.MainWindow;
+import com.daniel.robot7.swing.metadata.tab.LogMetadata;
+import com.daniel.robot7.swing.metadata.tab.ResultMetadata;
+import com.daniel.robot7.swing.tab.result.UrlNodeRenderer;
+import com.daniel.robot7.swing.tab.result.UrlTreeNode;
+import com.daniel.robot7.model.SearchCriteriaModel;
+import com.daniel.robot7.util.CommonConstants;
 
 /**
  * The Class CrawlerThread.

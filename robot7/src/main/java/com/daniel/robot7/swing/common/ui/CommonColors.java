@@ -2,13 +2,13 @@
  * Package crawler.util
  *
  **/
-package robot.gui.swing.common.ui;
+package com.daniel.robot7.swing.common.ui;
 
 import java.awt.Color;
 
 import javax.swing.UIManager;
 
-import robot.util.CommonConstants;
+import com.daniel.robot7.util.CommonConstants;
 
 /**
  * The Class CommonColors.

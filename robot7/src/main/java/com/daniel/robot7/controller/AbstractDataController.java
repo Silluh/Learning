@@ -1,13 +1,12 @@
-package robot.controller;
-
-import java.awt.Desktop;
-import java.net.URL;
+package com.daniel.robot7.controller;
 
 import org.apache.commons.validator.routines.UrlValidator;
+import com.daniel.robot7.swing.common.MessageWindow;
+import com.daniel.robot7.swing.metadata.tab.ResultMetadata;
+import com.daniel.robot7.swing.tab.searchCriteria.SearchCriteriaTab;
 
-import robot.gui.swing.common.MessageWindow;
-import robot.gui.swing.metadata.tab.ResultMetadata;
-import robot.gui.swing.tab.searchCriteria.SearchCriteriaTab;
+import java.awt.*;
+import java.net.URL;
 
 /**
  * The Class AbstractDataController.

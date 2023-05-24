@@ -2,12 +2,12 @@
  * Package crawler.util.system
  *
  **/
-package robot.gui.swing.common.ui;
+package com.daniel.robot7.swing.common.ui;
 
 import java.awt.Font;
 
-import robot.gui.swing.common.ui.api.IOperatingSystemUI;
-import robot.util.CommonConstants;
+import com.daniel.robot7.swing.common.ui.api.IOperatingSystemUI;
+import com.daniel.robot7.util.CommonConstants;
 
 /**
  * The Class AbstractOperatingSystemUI.
@@ -29,7 +29,7 @@ public abstract class AbstractOperatingSystemUI implements IOperatingSystemUI {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see robot.gui.swing.common.ui.api.IOperatingSystemUI#getFontTextAreaSerachedPhrases()
+	 * @see com.daniel.robot7.swing.common.ui.api.IOperatingSystemUI#getFontTextAreaSerachedPhrases()
 	 */
 	@Override
 	public Font getFontTextAreaSerachedPhrases() {
@@ -39,7 +39,7 @@ public abstract class AbstractOperatingSystemUI implements IOperatingSystemUI {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see robot.gui.swing.common.ui.api.IOperatingSystemUI#getFontTextAreaLog()
+	 * @see com.daniel.robot7.swing.common.ui.api.IOperatingSystemUI#getFontTextAreaLog()
 	 */
 	@Override
 	public Font getFontTextAreaLog() {
@@ -49,7 +49,7 @@ public abstract class AbstractOperatingSystemUI implements IOperatingSystemUI {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see robot.gui.swing.common.ui.api.IOperatingSystemUI#getFontLabelStatistics()
+	 * @see com.daniel.robot7.swing.common.ui.api.IOperatingSystemUI#getFontLabelStatistics()
 	 */
 	@Override
 	public Font getFontLabelStatistics() {

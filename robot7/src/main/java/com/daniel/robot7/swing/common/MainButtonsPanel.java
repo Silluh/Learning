@@ -2,7 +2,7 @@
  * Package spider.gui.swing
  *
  **/
-package robot.gui.swing.common;
+package com.daniel.robot7.swing.common;
 
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
@@ -12,12 +12,12 @@ import java.awt.Insets;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import robot.controller.mainButtonsPanel.ExitApplicationController;
-import robot.controller.mainButtonsPanel.StartSearchingController;
-import robot.controller.mainButtonsPanel.StopSearchingController;
-import robot.gui.swing.MainWindow;
-import robot.gui.swing.common.ui.CommonFonts;
-import robot.gui.swing.metadata.common.MainButtonsMetadata;
+import com.daniel.robot7.controller.mainButtonsPanel.ExitApplicationController;
+import com.daniel.robot7.controller.mainButtonsPanel.StartSearchingController;
+import com.daniel.robot7.controller.mainButtonsPanel.StopSearchingController;
+import com.daniel.robot7.swing.MainWindow;
+import com.daniel.robot7.swing.common.ui.CommonFonts;
+import com.daniel.robot7.swing.metadata.common.MainButtonsMetadata;
 
 /**
  * The Class MainButtonsPanel.

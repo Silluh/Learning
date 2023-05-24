@@ -2,7 +2,7 @@
  * Package spider.model
  *
  **/
-package robot.model;
+package com.daniel.robot7.model;
 
 import java.util.List;
 

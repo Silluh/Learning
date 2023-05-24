@@ -2,7 +2,7 @@
  * Package spider.gui.swing.tab
  *
  **/
-package robot.gui.swing.tab.searchCriteria;
+package com.daniel.robot7.swing.tab.searchCriteria;
 
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
@@ -31,18 +31,18 @@ import javax.swing.ListSelectionModel;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.text.PlainDocument;
 
-import robot.controller.searchCriteriaTab.AddNewDomainClick;
-import robot.controller.searchCriteriaTab.ChangeCheckboxMaxDepth;
-import robot.controller.searchCriteriaTab.ChangeCheckboxMaxVisitedPages;
-import robot.controller.searchCriteriaTab.ChangeCheckboxOnlyDefaultDomain;
-import robot.controller.searchCriteriaTab.ChangeCheckboxSetTimeout;
-import robot.controller.searchCriteriaTab.LongFilter;
-import robot.controller.searchCriteriaTab.ValidateUrlClick;
-import robot.gui.swing.MainWindow;
-import robot.gui.swing.common.MessageWindow;
-import robot.gui.swing.common.ui.AbstractOperatingSystemUI;
-import robot.gui.swing.metadata.tab.SearchCriteriaMetedata;
-import robot.gui.swing.tab.AbstractTab;
+import com.daniel.robot7.controller.searchCriteriaTab.AddNewDomainClick;
+import com.daniel.robot7.controller.searchCriteriaTab.ChangeCheckboxMaxDepth;
+import com.daniel.robot7.controller.searchCriteriaTab.ChangeCheckboxMaxVisitedPages;
+import com.daniel.robot7.controller.searchCriteriaTab.ChangeCheckboxOnlyDefaultDomain;
+import com.daniel.robot7.controller.searchCriteriaTab.ChangeCheckboxSetTimeout;
+import com.daniel.robot7.controller.searchCriteriaTab.LongFilter;
+import com.daniel.robot7.controller.searchCriteriaTab.ValidateUrlClick;
+import com.daniel.robot7.swing.MainWindow;
+import com.daniel.robot7.swing.common.MessageWindow;
+import com.daniel.robot7.swing.common.ui.AbstractOperatingSystemUI;
+import com.daniel.robot7.swing.metadata.tab.SearchCriteriaMetedata;
+import com.daniel.robot7.swing.tab.AbstractTab;
 
 /**
  * The Class SearchCriteriaTab.

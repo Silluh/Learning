@@ -7,12 +7,12 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
-import robot.gui.swing.MainWindow;
-import robot.gui.swing.common.MessageWindow;
-import robot.gui.swing.common.ui.AbstractOperatingSystemUI;
-import robot.gui.swing.common.ui.system.OtherUIComponent;
-import robot.gui.swing.common.ui.system.WindowsUIComponent;
-import robot.gui.swing.metadata.MainMetadata;
+import com.daniel.robot7.swing.MainWindow;
+import com.daniel.robot7.swing.common.MessageWindow;
+import com.daniel.robot7.swing.common.ui.AbstractOperatingSystemUI;
+import com.daniel.robot7.swing.common.ui.system.OtherUIComponent;
+import com.daniel.robot7.swing.common.ui.system.WindowsUIComponent;
+import com.daniel.robot7.swing.metadata.MainMetadata;
 
 /**
  * The Class Main.

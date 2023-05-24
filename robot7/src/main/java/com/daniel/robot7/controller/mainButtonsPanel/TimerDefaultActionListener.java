@@ -2,14 +2,14 @@
  * Package crawler.controller.mainButtonsPanel
  *
  **/
-package robot.controller.mainButtonsPanel;
+package com.daniel.robot7.controller.mainButtonsPanel;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JLabel;
 
-import robot.gui.swing.MainWindow;
+import com.daniel.robot7.swing.MainWindow;
 
 /**
  * The listener interface for receiving timerDefaultAction events. The class that is interested in processing a timerDefaultAction event implements this

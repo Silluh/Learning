@@ -2,7 +2,7 @@
  * Package crawler.gui.swing.metadata.tab
  *
  **/
-package robot.gui.swing.metadata.tab;
+package com.daniel.robot7.swing.metadata.tab;
 
 /**
  * The Class LogMetadata.

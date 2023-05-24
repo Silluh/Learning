@@ -2,7 +2,7 @@
  * Package crawler.gui.swing.tab.graph
  *
  **/
-package robot.gui.swing.tab.graph;
+package com.daniel.robot7.swing.tab.graph;
 
 import java.awt.Color;
 import java.awt.GridBagConstraints;
@@ -14,12 +14,12 @@ import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import robot.controller.graphTab.CreateGraphFromFile;
-import robot.controller.graphTab.CreateGraphInWindow;
-import robot.gui.swing.MainWindow;
-import robot.gui.swing.common.ui.CommonFonts;
-import robot.gui.swing.metadata.tab.GraphMetadata;
-import robot.gui.swing.tab.AbstractTab;
+import com.daniel.robot7.controller.graphTab.CreateGraphFromFile;
+import com.daniel.robot7.controller.graphTab.CreateGraphInWindow;
+import com.daniel.robot7.swing.MainWindow;
+import com.daniel.robot7.swing.common.ui.CommonFonts;
+import com.daniel.robot7.swing.metadata.tab.GraphMetadata;
+import com.daniel.robot7.swing.tab.AbstractTab;
 
 /**
  * The Class GraphTab.
@@ -42,7 +42,7 @@ public class GraphTab extends AbstractTab {
 	private JLabel														lblCircleRed;
 
 	/** The operating system ui. */
-	private final robot.gui.swing.common.ui.AbstractOperatingSystemUI	operatingSystemUI;
+	private final com.daniel.robot7.swing.common.ui.AbstractOperatingSystemUI	operatingSystemUI;
 
 	/**
 	 * Instantiates a new graph tab.

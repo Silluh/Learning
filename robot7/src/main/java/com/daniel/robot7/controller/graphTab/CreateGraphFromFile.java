@@ -2,7 +2,7 @@
  * Package crawler.controller.graphTab
  *
  **/
-package robot.controller.graphTab;
+package com.daniel.robot7.controller.graphTab;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,11 +15,11 @@ import javax.swing.JFileChooser;
 import javax.swing.JTree;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-import robot.gui.swing.MainWindow;
-import robot.gui.swing.common.MessageWindow;
-import robot.gui.swing.metadata.tab.GraphMetadata;
-import robot.gui.swing.tab.graph.window.WindowGraphFrame;
-import robot.util.CommonConstants;
+import com.daniel.robot7.swing.MainWindow;
+import com.daniel.robot7.swing.common.MessageWindow;
+import com.daniel.robot7.swing.metadata.tab.GraphMetadata;
+import com.daniel.robot7.swing.tab.graph.window.WindowGraphFrame;
+import com.daniel.robot7.util.CommonConstants;
 
 /**
  * The Class CreateGraphFromFile.

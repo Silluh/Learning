@@ -2,13 +2,13 @@
  * Package spider.controller.searchCriteria
  *
  **/
-package robot.controller.searchCriteriaTab;
+package com.daniel.robot7.controller.searchCriteriaTab;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import robot.controller.AbstractDataController;
-import robot.gui.swing.tab.searchCriteria.SearchCriteriaTab;
+import com.daniel.robot7.controller.AbstractDataController;
+import com.daniel.robot7.swing.tab.searchCriteria.SearchCriteriaTab;
 
 /**
  * The Class ChangeCheckboxMaxVisitedPages.

@@ -2,7 +2,7 @@
  * Package spider.gui.swing.metadata
  *
  **/
-package robot.gui.swing.metadata.common;
+package com.daniel.robot7.swing.metadata.common;
 
 /**
  * The Class MainButtonsMetadata.

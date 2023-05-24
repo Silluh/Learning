@@ -2,7 +2,7 @@
  * Package spider.controller.common
  *
  **/
-package robot.util;
+package com.daniel.robot7.util;
 
 /**
  * The Class CommonConstants.

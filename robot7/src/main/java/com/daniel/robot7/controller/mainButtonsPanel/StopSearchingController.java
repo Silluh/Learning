@@ -2,12 +2,12 @@
  * Package spider.controller.mainButtonsPanel
  *
  **/
-package robot.controller.mainButtonsPanel;
+package com.daniel.robot7.controller.mainButtonsPanel;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import robot.gui.swing.MainWindow;
+import com.daniel.robot7.swing.MainWindow;
 
 /**
  * The Class StopSearchingController.

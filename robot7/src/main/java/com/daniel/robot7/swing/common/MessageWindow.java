@@ -2,11 +2,11 @@
  * Package spider.gui.swing.common
  *
  **/
-package robot.gui.swing.common;
+package com.daniel.robot7.swing.common;
 
 import javax.swing.JOptionPane;
 
-import robot.gui.swing.MainWindow;
+import com.daniel.robot7.swing.MainWindow;
 
 /**
  * The Class MessageWindow.

@@ -2,7 +2,7 @@
  * Package crawler.gui.swing.metadata
  *
  **/
-package robot.gui.swing.metadata;
+package com.daniel.robot7.swing.metadata;
 
 /**
  * The Class MainMetadata.

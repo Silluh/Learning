@@ -2,7 +2,7 @@
  * Package spider.controller.mainButtons
  *
  **/
-package robot.controller.mainButtonsPanel;
+package com.daniel.robot7.controller.mainButtonsPanel;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,15 +12,15 @@ import java.net.Socket;
 import java.util.Arrays;
 import java.util.List;
 
-import robot.controller.AbstractDataController;
-import robot.controller.resultTab.CrawlerThread;
-import robot.gui.swing.MainWindow;
-import robot.gui.swing.common.MessageWindow;
-import robot.gui.swing.metadata.common.MainButtonsMetadata;
-import robot.gui.swing.metadata.tab.ResultMetadata;
-import robot.gui.swing.metadata.tab.SearchCriteriaMetedata;
-import robot.model.SearchCriteriaModel;
-import robot.util.CommonConstants;
+import com.daniel.robot7.controller.AbstractDataController;
+import com.daniel.robot7.controller.resultTab.CrawlerThread;
+import com.daniel.robot7.swing.MainWindow;
+import com.daniel.robot7.swing.common.MessageWindow;
+import com.daniel.robot7.swing.metadata.common.MainButtonsMetadata;
+import com.daniel.robot7.swing.metadata.tab.ResultMetadata;
+import com.daniel.robot7.swing.metadata.tab.SearchCriteriaMetedata;
+import com.daniel.robot7.model.SearchCriteriaModel;
+import com.daniel.robot7.util.CommonConstants;
 
 /**
  * The Class StartSearchingController.

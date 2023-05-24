@@ -1,4 +1,4 @@
-package robot.gui.swing.tab.graph.window;
+package com.daniel.robot7.swing.tab.graph.window;
 
 import java.awt.Color;
 import java.awt.Paint;
@@ -10,7 +10,7 @@ import javax.swing.tree.DefaultTreeModel;
 
 import org.apache.commons.collections15.Transformer;
 
-import robot.gui.swing.tab.result.UrlTreeNode;
+import com.daniel.robot7.swing.tab.result.UrlTreeNode;
 import edu.uci.ics.jung.graph.Forest;
 
 /**

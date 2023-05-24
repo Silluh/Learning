@@ -2,7 +2,7 @@
  * Package spider.gui.swing.tab.result
  *
  **/
-package robot.gui.swing.tab.result;
+package com.daniel.robot7.swing.tab.result;
 
 import java.io.Serializable;
 

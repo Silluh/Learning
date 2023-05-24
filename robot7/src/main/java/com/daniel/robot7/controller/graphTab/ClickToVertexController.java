@@ -2,11 +2,11 @@
  * Package crawler.controller.graphTab
  *
  **/
-package robot.controller.graphTab;
+package com.daniel.robot7.controller.graphTab;
 
 import java.awt.event.MouseEvent;
 
-import robot.controller.AbstractDataController;
+import com.daniel.robot7.controller.AbstractDataController;
 import edu.uci.ics.jung.visualization.control.GraphMouseListener;
 
 /**

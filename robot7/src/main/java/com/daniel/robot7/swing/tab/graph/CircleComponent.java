@@ -2,7 +2,7 @@
  * Package crawler.gui.swing.tab.graph.window
  *
  **/
-package robot.gui.swing.tab.graph;
+package com.daniel.robot7.swing.tab.graph;
 
 import java.awt.Color;
 import java.awt.Dimension;

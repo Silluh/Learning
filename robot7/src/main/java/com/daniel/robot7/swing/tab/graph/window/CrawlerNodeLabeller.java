@@ -2,7 +2,7 @@
  * Package crawler.gui.swing.tab.graph
  *
 **/
-package robot.gui.swing.tab.graph.window;
+package com.daniel.robot7.swing.tab.graph.window;
 
 import java.util.Enumeration;
 
@@ -12,7 +12,7 @@ import javax.swing.tree.DefaultTreeModel;
 
 import org.apache.commons.collections15.Transformer;
 
-import robot.gui.swing.tab.result.UrlTreeNode;
+import com.daniel.robot7.swing.tab.result.UrlTreeNode;
 
 /**
  * The Class CrawlerNodeLabeller.
