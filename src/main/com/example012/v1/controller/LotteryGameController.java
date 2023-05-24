@@ -49,7 +49,7 @@ public class LotteryGameController {
     private Set<Integer> generateUniqueNumbers() {
 
         Set<Integer> uniqueNumbers = new HashSet<>();
-        while (!(uniqueNumbers.size() == lottery.getMaxGuessedNumbers())) {
+        while (uniqueNumbers.size() != lottery.getMaxGuessedNumbers()) {
             uniqueNumbers.add(random.nextInt(lottery.getMaxNumber()));
         }
         return uniqueNumbers;
