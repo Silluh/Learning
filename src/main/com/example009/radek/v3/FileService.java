@@ -7,7 +7,11 @@ import java.util.Scanner;
 
 public class FileService {
 
-    private final String PATH_FILE_RESULTS = "src/main/resources/example009/v3/";
+    private final String PATH_FILE_RESULTS = "src" +
+            File.separator + "main" +
+            File.separator + "resources" +
+            File.separator + "example009" +
+            File.separator + "v3" + File.separator;
 
     void storeResultsIntoFile(List<Double> inputList) {
 
@@ -122,8 +126,8 @@ public class FileService {
 
     void saveResultsIntoFile(String name, List<Double> inputText) {
 
+        createDirectory();
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(PATH_FILE_RESULTS + name))) {
-            createDirectory();
             for (int i = 0; i < (long) inputText.size(); i++) {
                 writer.write(String.valueOf(inputText.get(i)));
                 writer.newLine();
