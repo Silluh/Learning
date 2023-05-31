@@ -1,6 +1,7 @@
 package main.com.example009.radek.v3;
 
 import java.io.*;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
@@ -45,10 +46,17 @@ public class FileService {
     int getUserIntInput() {
 
         System.out.println("Please insert file number or type '0' to end program");
-        Scanner scanner = new Scanner(System.in);
-        int input = scanner.nextInt();
-        if (input == 0) {
-            System.exit(0);
+        int input = 0;
+        while (input == 0){
+            try {
+                Scanner scanner = new Scanner(System.in);
+                input = scanner.nextInt();
+                if (input == 0) {
+                    System.exit(0);
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Please insert numeric value or type '0' to end program");
+            }
         }
         return input;
     }
@@ -99,9 +107,11 @@ public class FileService {
             }
             System.out.println(previousFiles);
             int fileNumber = getUserIntInput();
-            if (fileNumber - 1 <= files.length) {
+            if (fileNumber - 1 < files.length && fileNumber > 0) {
                 loadResultsFromFile(files[fileNumber - 1]);
                 System.exit(0);
+            } else {
+                System.out.println("Incorrect file number !");
             }
         }
     }
