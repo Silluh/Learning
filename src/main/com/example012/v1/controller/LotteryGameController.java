@@ -1,14 +1,11 @@
 package main.com.example012.v1.controller;
 
-
 import main.com.example012.v1.model.Lottery;
 import main.com.example012.v1.model.Ticket;
 import main.com.example012.v1.view.LotteryGameView;
 
 import java.security.SecureRandom;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 public class LotteryGameController {
 
@@ -50,7 +47,7 @@ public class LotteryGameController {
 
         Set<Integer> uniqueNumbers = new HashSet<>();
         while (uniqueNumbers.size() != lottery.getMaxGuessedNumbers()) {
-            uniqueNumbers.add(random.nextInt(lottery.getMaxNumber()));
+            uniqueNumbers.add(random.nextInt(lottery.getMaxNumber()) + 1);
         }
         return uniqueNumbers;
     }
@@ -64,11 +61,15 @@ public class LotteryGameController {
         return correctNumbers;
     }
 
-    public int[] correctNumbersFromTickets() {
+    public Map<Integer, Integer> correctNumbersFromTickets() {
 
-        int[] correctNumbers = new int[lottery.getMaxCorrectPossibilities()];
+        var correctNumbers = new HashMap<Integer, Integer>();
+        int correctNumbersOnTicket;
+        int numberOfCorrectNumbersOnTicket;
         for (Ticket ticket : tickets) {
-            correctNumbers[totalCorrectNumbers(ticket.getLotteryTicketNumbers(), winningTicket.getLotteryTicketNumbers())]++;
+            correctNumbersOnTicket = totalCorrectNumbers(ticket.getLotteryTicketNumbers(), winningTicket.getLotteryTicketNumbers());
+            numberOfCorrectNumbersOnTicket = correctNumbers.get(correctNumbersOnTicket) == null ? 0 : correctNumbers.get(correctNumbersOnTicket);
+            correctNumbers.put(correctNumbersOnTicket, ++numberOfCorrectNumbersOnTicket);
         }
         return correctNumbers;
     }
