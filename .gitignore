@@ -39,3 +39,4 @@
 /bin/
 **/*.local.yaml
 kubernetes/monitoring/auth
+baby-monitoring/target/

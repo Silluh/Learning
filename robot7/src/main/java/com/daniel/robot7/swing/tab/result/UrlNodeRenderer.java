@@ -2,7 +2,7 @@
  * Package spider.gui.swing.tab.result
  *
  **/
-package robot.gui.swing.tab.result;
+package com.daniel.robot7.swing.tab.result;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -13,8 +13,8 @@ import javax.swing.JTree;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeCellRenderer;
 
-import robot.gui.swing.common.ui.CommonColors;
-import robot.gui.swing.metadata.tab.ResultMetadata;
+import com.daniel.robot7.swing.common.ui.CommonColors;
+import com.daniel.robot7.swing.metadata.tab.ResultMetadata;
 
 /**
  * @author Daniel Žažo

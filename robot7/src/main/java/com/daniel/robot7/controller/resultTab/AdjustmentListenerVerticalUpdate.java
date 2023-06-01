@@ -2,7 +2,7 @@
  * Package spider.controller.resultTab
  *
  **/
-package robot.controller.resultTab;
+package com.daniel.robot7.controller.resultTab;
 
 import java.awt.event.AdjustmentEvent;
 import java.awt.event.AdjustmentListener;

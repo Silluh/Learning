@@ -2,7 +2,7 @@
  * Package crawler.controller.graphTab
  *
  **/
-package robot.controller.graphTab;
+package com.daniel.robot7.controller.graphTab;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

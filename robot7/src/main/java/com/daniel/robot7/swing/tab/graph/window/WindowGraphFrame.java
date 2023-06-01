@@ -2,7 +2,7 @@
  * Package crawler.gui.swing.tab.graph
  *
  **/
-package robot.gui.swing.tab.graph.window;
+package com.daniel.robot7.swing.tab.graph.window;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -10,8 +10,8 @@ import java.awt.Toolkit;
 import javax.swing.JFrame;
 import javax.swing.JTree;
 
-import robot.gui.swing.MainWindow;
-import robot.gui.swing.metadata.tab.GraphMetadata;
+import com.daniel.robot7.swing.MainWindow;
+import com.daniel.robot7.swing.metadata.tab.GraphMetadata;
 
 /**
  * The Class WindowGraphFrame.

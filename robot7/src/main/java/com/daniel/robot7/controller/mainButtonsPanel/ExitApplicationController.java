@@ -2,7 +2,7 @@
  * Package spider.controller.buttons
  *
  **/
-package robot.controller.mainButtonsPanel;
+package com.daniel.robot7.controller.mainButtonsPanel;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

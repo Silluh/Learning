@@ -2,7 +2,7 @@
  * Package crawler.util.system.api
  *
  **/
-package robot.gui.swing.common.ui.api;
+package com.daniel.robot7.swing.common.ui.api;
 
 import java.awt.Dimension;
 import java.awt.Font;

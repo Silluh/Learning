@@ -2,7 +2,7 @@
  * Package spider.gui.swing.tab.metadata
  *
  **/
-package robot.gui.swing.metadata.tab;
+package com.daniel.robot7.swing.metadata.tab;
 
 /**
  * The Class SearchCriteriaMetedata.

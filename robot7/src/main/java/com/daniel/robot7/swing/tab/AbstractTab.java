@@ -2,11 +2,11 @@
  * Package spider.gui.swing.tab
  *
  **/
-package robot.gui.swing.tab;
+package com.daniel.robot7.swing.tab;
 
 import javax.swing.JPanel;
 
-import robot.gui.swing.MainWindow;
+import com.daniel.robot7.swing.MainWindow;
 
 /**
  * The Class AbstractTab.

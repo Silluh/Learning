@@ -2,11 +2,11 @@
  * Package crawler.util.system
  *
  **/
-package robot.gui.swing.common.ui.system;
+package com.daniel.robot7.swing.common.ui.system;
 
 import java.awt.Dimension;
 
-import robot.gui.swing.common.ui.AbstractOperatingSystemUI;
+import com.daniel.robot7.swing.common.ui.AbstractOperatingSystemUI;
 
 /**
  * The Class WindowsUIComponent.
@@ -35,7 +35,7 @@ public class WindowsUIComponent extends AbstractOperatingSystemUI {
 	private final Dimension	dimensionOfPanelMouseModes		= new Dimension(130, 60);
 
 	/* (non-Javadoc)
-	 * @see robot.gui.swing.common.ui.api.IOperatingSystemUI#getDimensionAreLogPanel()
+	 * @see com.daniel.robot7.swing.common.ui.api.IOperatingSystemUI#getDimensionAreLogPanel()
 	 */
 	@Override
 	public Dimension getDimensionAreLogPanel() {
@@ -43,7 +43,7 @@ public class WindowsUIComponent extends AbstractOperatingSystemUI {
 	}
 
 	/* (non-Javadoc)
-	 * @see robot.gui.swing.common.ui.api.IOperatingSystemUI#getDimensionMainWindow()
+	 * @see com.daniel.robot7.swing.common.ui.api.IOperatingSystemUI#getDimensionMainWindow()
 	 */
 	@Override
 	public Dimension getDimensionMainWindow() {
@@ -51,7 +51,7 @@ public class WindowsUIComponent extends AbstractOperatingSystemUI {
 	}
 
 	/* (non-Javadoc)
-	 * @see robot.gui.swing.common.ui.api.IOperatingSystemUI#getDimensionButtonSwitchLayout()
+	 * @see com.daniel.robot7.swing.common.ui.api.IOperatingSystemUI#getDimensionButtonSwitchLayout()
 	 */
 	@Override
 	public Dimension getDimensionButtonSwitchLayout() {
@@ -59,7 +59,7 @@ public class WindowsUIComponent extends AbstractOperatingSystemUI {
 	}
 
 	/* (non-Javadoc)
-	 * @see robot.gui.swing.common.ui.api.IOperatingSystemUI#getDimensionResultPanel()
+	 * @see com.daniel.robot7.swing.common.ui.api.IOperatingSystemUI#getDimensionResultPanel()
 	 */
 	@Override
 	public Dimension getDimensionResultPanel() {
@@ -67,7 +67,7 @@ public class WindowsUIComponent extends AbstractOperatingSystemUI {
 	}
 
 	/* (non-Javadoc)
-	 * @see robot.gui.swing.common.ui.api.IOperatingSystemUI#getDimensionButtonOpenGraphInNewWindow()
+	 * @see com.daniel.robot7.swing.common.ui.api.IOperatingSystemUI#getDimensionButtonOpenGraphInNewWindow()
 	 */
 	@Override
 	public Dimension getDimensionButtonOpenGraphInNewWindow() {
@@ -75,7 +75,7 @@ public class WindowsUIComponent extends AbstractOperatingSystemUI {
 	}
 
 	/* (non-Javadoc)
-	 * @see robot.gui.swing.common.ui.api.IOperatingSystemUI#getDimensionPanelMouseModes()
+	 * @see com.daniel.robot7.swing.common.ui.api.IOperatingSystemUI#getDimensionPanelMouseModes()
 	 */
 	@Override
 	public Dimension getDimensionPanelMouseModes() {

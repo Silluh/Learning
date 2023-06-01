@@ -2,7 +2,7 @@
  * Package crawler.model
  *
  **/
-package robot.model;
+package com.daniel.robot7.model;
 
 /**
  * The Class StatisticsModel.

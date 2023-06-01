@@ -2,17 +2,18 @@
  * Package crawler.gui.swing.tab.graph
  *
 **/
-package robot.gui.swing.tab.graph.window;
+package com.daniel.robot7.swing.tab.graph.window;
 
 import java.util.Enumeration;
 
 import javax.swing.JTree;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreeNode;
 
 import org.apache.commons.collections15.Transformer;
 
-import robot.gui.swing.tab.result.UrlTreeNode;
+import com.daniel.robot7.swing.tab.result.UrlTreeNode;
 
 /**
  * The Class CrawlerNodeLabeller.
@@ -52,9 +53,10 @@ public class CrawlerNodeLabeller <V> implements Transformer<V, String> {
 	private String getCountOfFoundedPhrases(String urlInTree) {
 		final DefaultTreeModel treeModel = (DefaultTreeModel) jTreeUrls.getModel();
 		final DefaultMutableTreeNode root = (DefaultMutableTreeNode) treeModel.getRoot();
-		final Enumeration<DefaultMutableTreeNode> etree = root.breadthFirstEnumeration();
+		final Enumeration<TreeNode> etree = root.breadthFirstEnumeration();
 		while (etree.hasMoreElements()) {
-			final UrlTreeNode node = (UrlTreeNode) (etree.nextElement().getUserObject());
+			final DefaultMutableTreeNode dep = (DefaultMutableTreeNode) etree.nextElement();
+			final UrlTreeNode node = (UrlTreeNode) (dep.getUserObject());
 			if (node instanceof UrlTreeNode && node.equals(urlInTree)) {
 				return Long.toString(node.getCountOfAllPhrases());
 			}

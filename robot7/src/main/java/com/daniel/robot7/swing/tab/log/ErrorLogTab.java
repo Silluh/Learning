@@ -2,7 +2,7 @@
  * Package crawler.gui.swing.tab
  *
  **/
-package robot.gui.swing.tab.log;
+package com.daniel.robot7.swing.tab.log;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -13,9 +13,9 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
 
-import robot.gui.swing.MainWindow;
-import robot.gui.swing.common.ui.AbstractOperatingSystemUI;
-import robot.gui.swing.tab.AbstractTab;
+import com.daniel.robot7.swing.MainWindow;
+import com.daniel.robot7.swing.common.ui.AbstractOperatingSystemUI;
+import com.daniel.robot7.swing.tab.AbstractTab;
 
 /**
  * The Class ErrorLogTab.

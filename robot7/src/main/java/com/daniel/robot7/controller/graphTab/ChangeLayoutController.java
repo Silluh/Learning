@@ -2,12 +2,12 @@
  * Package crawler.controller.graphTab
  *
  **/
-package robot.controller.graphTab;
+package com.daniel.robot7.controller.graphTab;
 
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
-import robot.gui.swing.tab.graph.window.WindowGraph;
+import com.daniel.robot7.swing.tab.graph.window.WindowGraph;
 import edu.uci.ics.jung.algorithms.layout.BalloonLayout;
 import edu.uci.ics.jung.algorithms.layout.TreeLayout;
 import edu.uci.ics.jung.visualization.Layer;

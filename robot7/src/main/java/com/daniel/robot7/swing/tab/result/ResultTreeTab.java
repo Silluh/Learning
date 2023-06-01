@@ -2,7 +2,7 @@
  * Package spider.gui.swing.tab
  *
  **/
-package robot.gui.swing.tab.result;
+package com.daniel.robot7.swing.tab.result;
 
 import java.awt.FlowLayout;
 
@@ -12,11 +12,11 @@ import javax.swing.JScrollPane;
 import javax.swing.JTree;
 import javax.swing.ScrollPaneConstants;
 
-import robot.controller.resultTab.DoubleClickToNodeController;
-import robot.gui.swing.MainWindow;
-import robot.gui.swing.common.ui.AbstractOperatingSystemUI;
-import robot.gui.swing.metadata.tab.ResultMetadata;
-import robot.gui.swing.tab.AbstractTab;
+import com.daniel.robot7.controller.resultTab.DoubleClickToNodeController;
+import com.daniel.robot7.swing.MainWindow;
+import com.daniel.robot7.swing.common.ui.AbstractOperatingSystemUI;
+import com.daniel.robot7.swing.metadata.tab.ResultMetadata;
+import com.daniel.robot7.swing.tab.AbstractTab;
 
 /**
  * The Class ResultTreeTab.

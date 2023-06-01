@@ -2,13 +2,13 @@
  * Package crawler.controller.graphTab
  *
  **/
-package robot.controller.graphTab;
+package com.daniel.robot7.controller.graphTab;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 
-import robot.gui.swing.tab.graph.window.WindowGraphFrame;
+import com.daniel.robot7.swing.tab.graph.window.WindowGraphFrame;
 
 /**
  * The Class CloseGraphWindowController.

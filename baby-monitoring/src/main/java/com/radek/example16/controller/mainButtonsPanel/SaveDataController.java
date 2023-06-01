@@ -33,7 +33,7 @@ public class SaveDataController implements ActionListener {
 
         initDatabase();
         createDatabase();
-        String query = "INSERT INTO userFormExample16(Date) VALUES (?)";
+        String query = "INSERT INTO userFormExample16(Date) VALUES (?)";;;
         try (PreparedStatement statement = conn.prepareStatement(query)) {
             Timestamp timestamp = getTimeStampFromView();
             statement.setTimestamp(1, timestamp);

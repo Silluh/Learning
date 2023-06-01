@@ -2,7 +2,7 @@
  * Package crawler.gui.swing.tab.graph
  *
  **/
-package robot.gui.swing.tab.graph.window;
+package com.daniel.robot7.swing.tab.graph.window;
 
 import org.apache.commons.collections15.Factory;
 

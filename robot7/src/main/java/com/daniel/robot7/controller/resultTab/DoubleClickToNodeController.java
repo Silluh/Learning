@@ -2,7 +2,7 @@
  * Package spider.controller.resultTab
  *
  **/
-package robot.controller.resultTab;
+package com.daniel.robot7.controller.resultTab;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -10,8 +10,8 @@ import java.io.Serializable;
 
 import javax.swing.tree.TreePath;
 
-import robot.controller.AbstractDataController;
-import robot.gui.swing.tab.result.ResultTreeTab;
+import com.daniel.robot7.controller.AbstractDataController;
+import com.daniel.robot7.swing.tab.result.ResultTreeTab;
 
 /**
  * The Class DoubleClickToNodeController.
